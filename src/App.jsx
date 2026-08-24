@@ -7,7 +7,7 @@ import HomeLoansCaseStudy from "./pages/HomeLoansCaseStudy";
 import ContactChatbot from "./components/ContactChatbot";
 
 import homeLoanzHome from "./assets/home-loanz-home.png/homeloanz-home.PNG";
-import fnJewelryHome from "./assets/fn-jewelry-home.png/Capture.png";
+import fnJewelryHome from "./assets/fn-jewelry-home.png/Capture.PNG";
 
 
 /* =========================================================
