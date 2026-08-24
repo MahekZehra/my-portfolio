@@ -1056,33 +1056,34 @@ function PortfolioHome() {
               </p>
 
 
+              
               <div className="footer-socials">
 
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn ↗
-                </a>
+  <a
+    href="https://www.linkedin.com/in/mahek-zehra-b141263b2/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    LinkedIn ↗
+  </a>
 
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Instagram ↗
-                </a>
+  <a
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Instagram ↗
+  </a>
 
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
+  <a
+    href="https://github.com/MahekZehra"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub ↗
+  </a>
 
-              </div>
+</div>
 
             </div>
 
