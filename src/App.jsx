@@ -7,7 +7,7 @@ import HomeLoansCaseStudy from "./pages/HomeLoansCaseStudy";
 import ContactChatbot from "./components/ContactChatbot";
 
 import homeLoanzHome from "./assets/home-loanz-home.png/homeloanz-home.PNG";
-import fnJewelryHome from "./assets/fn-jewelry-home.png/Capture.PNG";
+import fnJewelryHome from "./assets/fn-jewelry-home.png/Capture.png";
 
 
 /* =========================================================
@@ -18,20 +18,13 @@ function PortfolioHome() {
 
   const [chatOpen, setChatOpen] = useState(false);
 
-
-  /* =======================================================
-     CHATBOT CONTROLS
-  ======================================================= */
-
   const openChat = () => {
     setChatOpen(true);
   };
 
-
   const closeChat = () => {
     setChatOpen(false);
   };
-
 
   return (
     <div className="portfolio">
@@ -59,7 +52,6 @@ function PortfolioHome() {
             MZ<span>.</span>
           </a>
 
-
           <nav className="nav-links">
 
             <a href="#about">
@@ -83,7 +75,6 @@ function PortfolioHome() {
             </a>
 
           </nav>
-
 
           {/* =================================================
               LET'S TALK
@@ -109,7 +100,6 @@ function PortfolioHome() {
 
       <main id="top">
 
-
         {/* =====================================================
             HERO
         ===================================================== */}
@@ -124,7 +114,6 @@ function PortfolioHome() {
                 WEB DESIGN · DIGITAL MARKETING · CREATIVE DESIGN
               </p>
 
-
               <h1>
                 I Design Digital Experiences
                 <span>
@@ -132,13 +121,11 @@ function PortfolioHome() {
                 </span>
               </h1>
 
-
               <p className="hero-description">
                 I create modern websites, engaging digital experiences,
                 and creative digital solutions that help brands build
                 a stronger and more memorable presence online.
               </p>
-
 
               <div className="hero-buttons">
 
@@ -150,7 +137,6 @@ function PortfolioHome() {
                   <span>↗</span>
                 </a>
 
-
                 <button
                   type="button"
                   className="secondary-button"
@@ -161,7 +147,6 @@ function PortfolioHome() {
                 </button>
 
               </div>
-
 
               <div className="hero-highlights">
 
@@ -182,9 +167,7 @@ function PortfolioHome() {
             </div>
 
 
-            {/* =================================================
-                HERO VISUAL
-            ================================================= */}
+            {/* HERO VISUAL */}
 
             <div className="hero-visual">
 
@@ -200,16 +183,13 @@ function PortfolioHome() {
 
                 </div>
 
-
                 <h3>
                   Creative digital experiences.
                 </h3>
 
-
                 <p>
                   Websites, design & digital solutions crafted with purpose.
                 </p>
-
 
                 <div className="hero-visual-footer">
 
@@ -224,7 +204,6 @@ function PortfolioHome() {
                 </div>
 
               </div>
-
 
               <div className="hero-orbit hero-orbit-one"></div>
 
@@ -267,7 +246,6 @@ function PortfolioHome() {
 
             </div>
 
-
             <div className="about-grid">
 
               <div className="about-intro">
@@ -275,7 +253,6 @@ function PortfolioHome() {
                 <span className="about-number">
                   01
                 </span>
-
 
                 <div
                   className="about-profile"
@@ -316,7 +293,6 @@ function PortfolioHome() {
 
                   </div>
 
-
                   <div>
 
                     <span
@@ -334,7 +310,6 @@ function PortfolioHome() {
                     >
                       Mahek Zehra
                     </span>
-
 
                     <span
                       style={{
@@ -354,7 +329,6 @@ function PortfolioHome() {
 
                 </div>
 
-
                 <p>
                   I'm a creative digital professional with a background in
                   Computer Science, combining technical thinking with a strong
@@ -373,13 +347,11 @@ function PortfolioHome() {
                   digital marketing solutions.
                 </p>
 
-
                 <p>
                   My approach is simple: understand the goal, create with
                   purpose, and make the final experience feel polished,
                   professional, and meaningful.
                 </p>
-
 
                 <div
                   className="about-stats"
@@ -406,7 +378,6 @@ function PortfolioHome() {
 
                 </div>
 
-
                 <div
                   className="about-process"
                   style={{
@@ -428,7 +399,6 @@ function PortfolioHome() {
                     A LITTLE ABOUT MY PROCESS
                   </p>
 
-
                   <h3
                     style={{
                       marginBottom: "15px",
@@ -444,7 +414,6 @@ function PortfolioHome() {
                     <br />
                     Create with purpose.
                   </h3>
-
 
                   <p
                     style={{
@@ -508,16 +477,13 @@ function PortfolioHome() {
             <div className="services-grid">
 
               <article className="service-card service-card-lavender">
-
                 <div className="service-top">
                   <span>01</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>
-                    Web Design & Development
-                  </h3>
+                  <h3>Web Design & Development</h3>
 
                   <p>
                     Modern, responsive websites designed to give brands
@@ -525,42 +491,34 @@ function PortfolioHome() {
                     experience.
                   </p>
                 </div>
-
               </article>
 
 
               <article className="service-card service-card-blush">
-
                 <div className="service-top">
                   <span>02</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>
-                    UI/UX Design
-                  </h3>
+                  <h3>UI/UX Design</h3>
 
                   <p>
                     Clean and intuitive interfaces focused on usability,
                     visual hierarchy, and meaningful user experiences.
                   </p>
                 </div>
-
               </article>
 
 
               <article className="service-card service-card-peach">
-
                 <div className="service-top">
                   <span>03</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>
-                    Digital Marketing
-                  </h3>
+                  <h3>Digital Marketing</h3>
 
                   <p>
                     Digital strategies focused on improving online
@@ -568,63 +526,51 @@ function PortfolioHome() {
                     stronger brands.
                   </p>
                 </div>
-
               </article>
 
 
               <article className="service-card service-card-sage">
-
                 <div className="service-top">
                   <span>04</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>
-                    Social Media Management
-                  </h3>
+                  <h3>Social Media Management</h3>
 
                   <p>
                     Content planning and creative direction designed to keep
                     brands consistent, active, and engaging online.
                   </p>
                 </div>
-
               </article>
 
 
               <article className="service-card service-card-butter">
-
                 <div className="service-top">
                   <span>05</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>
-                    Graphic Design
-                  </h3>
+                  <h3>Graphic Design</h3>
 
                   <p>
                     Visual assets that help brands communicate clearly and
                     maintain a consistent professional identity.
                   </p>
                 </div>
-
               </article>
 
 
               <article className="service-card service-card-rose">
-
                 <div className="service-top">
                   <span>06</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>
-                    Video Editing
-                  </h3>
+                  <h3>Video Editing</h3>
 
                   <p>
                     Engaging short-form and promotional video content
@@ -632,7 +578,6 @@ function PortfolioHome() {
                     communication.
                   </p>
                 </div>
-
               </article>
 
             </div>
@@ -707,11 +652,9 @@ function PortfolioHome() {
 
                 </div>
 
-
                 <h3>
                   FN Jewelry Worldwide
                 </h3>
-
 
                 <p className="project-description">
                   A complete e-commerce experience designed to showcase
@@ -719,17 +662,13 @@ function PortfolioHome() {
                   premium, responsive, and intuitive shopping journey.
                 </p>
 
-
                 <div className="project-tags">
-
                   <span>E-Commerce</span>
                   <span>Responsive Design</span>
                   <span>UI/UX</span>
                   <span>Shopping Flow</span>
                   <span>Country & Currency</span>
-
                 </div>
-
 
                 <a
                   href="/case-study/fn-jewelry"
@@ -777,11 +716,9 @@ function PortfolioHome() {
 
                 </div>
 
-
                 <h3>
                   Home Loans LLC
                 </h3>
-
 
                 <p className="project-description">
                   A modern mortgage and home-loan website designed to make
@@ -790,17 +727,13 @@ function PortfolioHome() {
                   digital experience.
                 </p>
 
-
                 <div className="project-tags">
-
                   <span>Web Design</span>
                   <span>Responsive Design</span>
                   <span>Mortgage</span>
                   <span>Calculator</span>
                   <span>UI/UX</span>
-
                 </div>
-
 
                 <a
                   href="/case-study/home-loans"
@@ -943,7 +876,6 @@ function PortfolioHome() {
               HAVE A PROJECT IN MIND?
             </p>
 
-
             <h2>
               Let's create something
               <span>
@@ -951,13 +883,11 @@ function PortfolioHome() {
               </span>
             </h2>
 
-
             <p className="contact-description">
               Whether you need a website, a stronger digital presence,
               or creative content for your brand, let's turn your idea
               into something impactful.
             </p>
-
 
             <button
               type="button"
@@ -985,7 +915,6 @@ function PortfolioHome() {
 
           <div className="footer-main">
 
-
             {/* BRAND */}
 
             <div className="footer-brand">
@@ -997,12 +926,10 @@ function PortfolioHome() {
                 MZ<span>.</span>
               </a>
 
-
               <p>
                 Creative digital experiences built with strategy,
                 design, and purpose.
               </p>
-
 
               <span className="footer-availability">
                 ● Available for creative projects
@@ -1018,7 +945,6 @@ function PortfolioHome() {
               <p className="footer-heading">
                 EXPLORE
               </p>
-
 
               <div className="footer-links">
 
@@ -1055,35 +981,41 @@ function PortfolioHome() {
                 CONNECT
               </p>
 
-
-              
               <div className="footer-socials">
 
-  <a
-    href="https://www.linkedin.com/in/mahek-zehra-b141263b2/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    LinkedIn ↗
-  </a>
+                {/* LINKEDIN */}
 
-  <a
-    href="#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Instagram ↗
-  </a>
+                <a
+                  href="https://www.linkedin.com/in/mahek-zehra-b141263b2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn ↗
+                </a>
 
-  <a
-    href="https://github.com/MahekZehra"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub ↗
-  </a>
 
-</div>
+                {/* INSTAGRAM */}
+
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram ↗
+                </a>
+
+
+                {/* GITHUB */}
+
+                <a
+                  href="https://github.com/MahekZehra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub ↗
+                </a>
+
+              </div>
 
             </div>
 
@@ -1108,10 +1040,62 @@ function PortfolioHome() {
 
 
       {/* =====================================================
-          CONTACT CHATBOT
+          FLOATING WHATSAPP BUTTON
+          VISIBLE ON PORTFOLIO HOME
+      ===================================================== */}
 
-          ONE INSTANCE ONLY
-          RENDERED THROUGH CONTACTCHATBOT PORTAL
+      <a
+        href="https://wa.me/923353149929"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Mahek on WhatsApp"
+        title="Chat with me on WhatsApp"
+        style={{
+          position: "fixed",
+          right: "22px",
+          bottom: "22px",
+          width: "54px",
+          height: "54px",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#25D366",
+          color: "#ffffff",
+          textDecoration: "none",
+          fontSize: "28px",
+          lineHeight: "1",
+          boxShadow: "0 10px 28px rgba(37, 211, 102, 0.30)",
+          zIndex: 9990,
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.08)";
+          e.currentTarget.style.boxShadow =
+            "0 14px 34px rgba(37, 211, 102, 0.38)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow =
+            "0 10px 28px rgba(37, 211, 102, 0.30)";
+        }}
+      >
+        <span
+          aria-hidden="true"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontWeight: "700",
+          }}
+        >
+          ☎
+        </span>
+      </a>
+
+
+      {/* =====================================================
+          CONTACT CHATBOT
       ===================================================== */}
 
       {chatOpen && (
