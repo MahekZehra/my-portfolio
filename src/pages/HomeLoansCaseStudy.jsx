@@ -13,7 +13,7 @@ import resources from "../assets/home-loanz-home.png/homeloanz-resources.PNG";
 import reviews from "../assets/home-loanz-home.png/homeloanz-reviews.PNG";
 import whyChooseUs from "../assets/home-loanz-home.png/homeloanz-whychooseus.PNG";
 
-function HomeLoansCaseStudy() {
+function HomeLoansCaseStudy({ onWorkTogether }) {
   return (
     <div className="home-loans-case-study">
 
@@ -997,13 +997,14 @@ function HomeLoansCaseStudy() {
             ← Back to Portfolio
           </Link>
 
-          <a
-            href="mailto:your@email.com"
+          <button
+            type="button"
             className="hl-primary-button"
+            onClick={onWorkTogether}
           >
             Let's Work Together
             <span>↗</span>
-          </a>
+          </button>
 
         </div>
 

@@ -7,24 +7,14 @@ import HomeLoansCaseStudy from "./pages/HomeLoansCaseStudy";
 import ContactChatbot from "./components/ContactChatbot";
 
 import homeLoanzHome from "./assets/home-loanz-home.png/homeloanz-home.PNG";
-import fnJewelryHome from "./assets/fn-jewelry-home.png/Capture.PNG";
+import fnJewelryHome from "./assets/fn-jewelry-home.png/homepage.PNG";
 
 
 /* =========================================================
    PORTFOLIO HOME
 ========================================================= */
 
-function PortfolioHome() {
-
-  const [chatOpen, setChatOpen] = useState(false);
-
-  const openChat = () => {
-    setChatOpen(true);
-  };
-
-  const closeChat = () => {
-    setChatOpen(false);
-  };
+function PortfolioHome({ onOpenChat }) {
 
   return (
     <div className="portfolio">
@@ -83,7 +73,7 @@ function PortfolioHome() {
           <button
             type="button"
             className="nav-button"
-            onClick={openChat}
+            onClick={onOpenChat}
           >
             Let's Talk
             <span>↗</span>
@@ -140,7 +130,7 @@ function PortfolioHome() {
                 <button
                   type="button"
                   className="secondary-button"
-                  onClick={openChat}
+                  onClick={onOpenChat}
                 >
                   Let's Work Together
                   <span>→</span>
@@ -892,7 +882,7 @@ function PortfolioHome() {
             <button
               type="button"
               className="contact-button"
-              onClick={openChat}
+              onClick={onOpenChat}
             >
               Let's Work Together
               <span>↗</span>
@@ -1093,17 +1083,6 @@ function PortfolioHome() {
         </span>
       </a>
 
-
-      {/* =====================================================
-          CONTACT CHATBOT
-      ===================================================== */}
-
-      {chatOpen && (
-        <ContactChatbot
-          onClose={closeChat}
-        />
-      )}
-
     </div>
   );
 }
@@ -1115,6 +1094,16 @@ function PortfolioHome() {
 
 function App() {
 
+  const [chatOpen, setChatOpen] = useState(false);
+
+  const openChat = () => {
+    setChatOpen(true);
+  };
+
+  const closeChat = () => {
+    setChatOpen(false);
+  };
+
   return (
     <BrowserRouter>
 
@@ -1122,20 +1111,42 @@ function App() {
 
         <Route
           path="/"
-          element={<PortfolioHome />}
+          element={
+            <PortfolioHome
+              onOpenChat={openChat}
+            />
+          }
         />
 
         <Route
           path="/case-study/fn-jewelry"
-          element={<FNJewelryCaseStudy />}
+          element={
+            <FNJewelryCaseStudy
+              onWorkTogether={openChat}
+            />
+          }
         />
 
         <Route
           path="/case-study/home-loans"
-          element={<HomeLoansCaseStudy />}
+          element={
+            <HomeLoansCaseStudy
+              onWorkTogether={openChat}
+            />
+          }
         />
 
       </Routes>
+
+      {/* =====================================================
+          CONTACT CHATBOT
+      ===================================================== */}
+
+      {chatOpen && (
+        <ContactChatbot
+          onClose={closeChat}
+        />
+      )}
 
     </BrowserRouter>
   );

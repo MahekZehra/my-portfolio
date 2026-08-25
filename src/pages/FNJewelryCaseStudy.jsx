@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import "./FNJewelryCaseStudy.css";
 
-import capture0 from "../assets/fn-jewelry-home.png/Capture.PNG";
-import capture1 from "../assets/fn-jewelry-home.png/Capture1.PNG";
-import capture2 from "../assets/fn-jewelry-home.png/Capture2.PNG";
-import capture3 from "../assets/fn-jewelry-home.png/Capture3.PNG";
-import capture4 from "../assets/fn-jewelry-home.png/Capture4.PNG";
-import capture5 from "../assets/fn-jewelry-home.png/Capture5.PNG";
-import capture6 from "../assets/fn-jewelry-home.png/Capture6.PNG";
-import capture7 from "../assets/fn-jewelry-home.png/Capture7.PNG";
-import capture8 from "../assets/fn-jewelry-home.png/Capture8.PNG";
-import capture9 from "../assets/fn-jewelry-home.png/Capture9.PNG";
-import capture10 from "../assets/fn-jewelry-home.png/Capture10.PNG";
+import homepage from "../assets/fn-jewelry-home.png/homepage.PNG";
+import bestseller from "../assets/fn-jewelry-home.png/Bestseller.PNG";
+import shopByCategory from "../assets/fn-jewelry-home.png/Shopebycategory.PNG";
+import cart from "../assets/fn-jewelry-home.png/Cart.PNG";
+import checkout from "../assets/fn-jewelry-home.png/Checkout.PNG";
+import footer from "../assets/fn-jewelry-home.png/Footer.PNG";
+import knowYourStones from "../assets/fn-jewelry-home.png/Knowyourstones.PNG";
+import worldwideDelivery from "../assets/fn-jewelry-home.png/Worldwidedelivery.PNG";
+import faq from "../assets/fn-jewelry-home.png/Faq.PNG";
+import ourStory1 from "../assets/fn-jewelry-home.png/Ourstory1.PNG";
+import ourStory2 from "../assets/fn-jewelry-home.png/Ourstory2.PNG";
 
 function EditorialImage({ src, alt, label, number }) {
   return (
@@ -30,7 +30,7 @@ function EditorialImage({ src, alt, label, number }) {
   );
 }
 
-function FNJewelryCaseStudy() {
+function FNJewelryCaseStudy({ onWorkTogether }) {
   return (
     <div className="fn-case-study">
 
@@ -53,6 +53,7 @@ function FNJewelryCaseStudy() {
         </Link>
       </header>
 
+
       {/* =========================
           HERO
       ========================= */}
@@ -61,7 +62,7 @@ function FNJewelryCaseStudy() {
 
         <div className="hero-side-label">
           <span>CASE STUDY</span>
-          <span>01 / 12</span>
+          <span>01 / 13</span>
         </div>
 
         <div className="hero-kicker">
@@ -76,12 +77,14 @@ function FNJewelryCaseStudy() {
         <div className="hero-bottom">
 
           <p className="hero-description">
-            A fashion-forward e-commerce experience created to turn a
-            jewellery brand into a polished digital destination —
-            playful, elegant, responsive, and ready for a worldwide audience.
+            A refined e-commerce experience designed to bring FN Jewelry
+            into a polished digital space — combining product discovery,
+            brand storytelling, responsive design, and a seamless shopping
+            journey for customers around the world.
           </p>
 
           <div className="hero-meta">
+
             <div>
               <span>ROLE</span>
               <strong>Design + Development</strong>
@@ -96,6 +99,7 @@ function FNJewelryCaseStudy() {
               <span>YEAR</span>
               <strong>2026</strong>
             </div>
+
           </div>
 
         </div>
@@ -106,15 +110,18 @@ function FNJewelryCaseStudy() {
 
       </section>
 
+
       {/* =========================
           HERO SCREENSHOT
       ========================= */}
 
       <section className="hero-screen-section">
+
         <div className="editorial-shot hero-shot">
+
           <div className="shot-frame">
             <img
-              src={capture0}
+              src={homepage}
               alt="FN Jewelry Worldwide homepage"
             />
           </div>
@@ -123,8 +130,11 @@ function FNJewelryCaseStudy() {
             <span>THE DIGITAL STOREFRONT</span>
             <span>01 — HOMEPAGE</span>
           </div>
+
         </div>
+
       </section>
+
 
       {/* =========================
           PROJECT STORY
@@ -140,149 +150,42 @@ function FNJewelryCaseStudy() {
         <div className="story-layout">
 
           <div className="story-title">
-            <p className="mini-label">THE BEGINNING</p>
+
+            <p className="mini-label">
+              THE BEGINNING
+            </p>
 
             <h2>
-              From a product
-              <em>to a presence.</em>
+              From a collection
+              <em>to a digital identity.</em>
             </h2>
+
           </div>
 
           <div className="story-copy">
 
             <p className="lead-copy">
-              FN Jewelry Worldwide began with a simple idea:
-              create a digital space where jewellery, garments,
-              and Kundan accessories could feel as beautiful online
-              as they do in real life.
+              FN Jewelry Worldwide needed a digital experience that could
+              present its jewellery, garments, accessories, and Kundan
+              pieces in a way that felt polished, feminine, and easy to
+              explore.
             </p>
 
             <p>
-              The goal was never to build just another online shop.
-              The experience needed to feel intentional, feminine,
-              modern, and effortless — while still making the actual
-              shopping journey incredibly simple.
+              The goal was to create more than a simple product catalogue.
+              The website needed to communicate the personality of the
+              brand while giving customers a clear and comfortable path
+              from discovering a collection to completing a purchase.
             </p>
 
             <div className="story-note">
+
               <span>THE INTENTION</span>
+
               <strong>
-                Make shopping feel less like a task
-                and more like discovering something beautiful.
+                Turn product browsing into an experience
+                that feels personal, visual, and effortless.
               </strong>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* =========================
-          PROBLEM / GOAL
-      ========================= */}
-
-      <section className="goal-section">
-
-        <div className="editorial-number">03</div>
-
-        <div className="goal-header">
-          <p className="mini-label">PROBLEM / GOAL</p>
-
-          <h2>
-            Beautiful products
-            <em>needed a beautiful journey.</em>
-          </h2>
-        </div>
-
-        <div className="goal-grid">
-
-          <article>
-            <span>01</span>
-            <h3>Make discovery effortless.</h3>
-            <p>
-              Customers should be able to move from browsing
-              to product discovery without feeling overwhelmed.
-            </p>
-          </article>
-
-          <article>
-            <span>02</span>
-            <h3>Keep the interface elegant.</h3>
-            <p>
-              The design needed enough personality to feel premium
-              without distracting from the products themselves.
-            </p>
-          </article>
-
-          <article>
-            <span>03</span>
-            <h3>Build for real shopping.</h3>
-            <p>
-              Product pages, cart, checkout, confirmation,
-              country and currency all needed to work together.
-            </p>
-          </article>
-
-        </div>
-
-      </section>
-
-      {/* =========================
-          APPROACH
-      ========================= */}
-
-      <section className="approach-section">
-
-        <div className="section-index">
-          <span>04</span>
-          <small>MY APPROACH</small>
-        </div>
-
-        <div className="approach-layout">
-
-          <div>
-            <p className="mini-label">DESIGN THINKING</p>
-
-            <h2>
-              Less friction.
-              <em>More feeling.</em>
-            </h2>
-          </div>
-
-          <div className="approach-copy">
-
-            <p className="lead-copy">
-              I approached the project as both a designer and developer,
-              thinking about the visual experience and the actual user
-              journey at the same time.
-            </p>
-
-            <div className="approach-list">
-
-              <div>
-                <span>01</span>
-                <strong>Understand</strong>
-                <p>Define the brand, audience, and shopping goals.</p>
-              </div>
-
-              <div>
-                <span>02</span>
-                <strong>Design</strong>
-                <p>Create a visual system that feels premium and approachable.</p>
-              </div>
-
-              <div>
-                <span>03</span>
-                <strong>Build</strong>
-                <p>Turn the experience into responsive, interactive interfaces.</p>
-              </div>
-
-              <div>
-                <span>04</span>
-                <strong>Refine</strong>
-                <p>Polish spacing, interactions, responsiveness, and flow.</p>
-              </div>
 
             </div>
 
@@ -292,68 +195,75 @@ function FNJewelryCaseStudy() {
 
       </section>
 
+
       {/* =========================
-          DESIGN DECISIONS
+          BRAND STORY
       ========================= */}
 
       <section className="design-section">
 
         <div className="section-index">
-          <span>05</span>
-          <small>DESIGN DECISIONS</small>
+          <span>03</span>
+          <small>BRAND STORY</small>
         </div>
 
         <div className="design-intro">
 
-          <p className="mini-label">VISUAL DIRECTION</p>
+          <p className="mini-label">
+            BEYOND THE PRODUCT
+          </p>
 
           <h2>
-            Soft visuals.
-            <em>Strong structure.</em>
+            Give the brand
+            <em>a story to remember.</em>
           </h2>
 
           <p>
-            The interface balances feminine visual details with a clean
-            structure so the jewellery remains the main character.
+            Alongside product discovery, the experience gives visitors
+            space to understand the story behind FN Jewelry and connect
+            with the brand beyond individual products.
           </p>
 
         </div>
 
         <div className="design-pills">
+          <span>Brand Storytelling</span>
+          <span>Visual Identity</span>
           <span>Editorial Layouts</span>
-          <span>Soft Visual Language</span>
           <span>Clear Hierarchy</span>
           <span>Premium Product Focus</span>
-          <span>Responsive First</span>
         </div>
 
         <EditorialImage
-          src={capture1}
-          alt="FN Jewelry homepage design"
-          label="Homepage / Brand Introduction"
-          number="05.01"
+          src={ourStory1}
+          alt="FN Jewelry brand story"
+          label="Our Story / Brand Introduction"
+          number="03.01"
         />
 
       </section>
 
+
       {/* =========================
-          SHOPPING EXPERIENCE
+          BRAND STORY CONTINUATION
       ========================= */}
 
       <section className="shopping-section">
 
         <div className="section-index">
-          <span>06</span>
-          <small>SHOPPING EXPERIENCE</small>
+          <span>04</span>
+          <small>BRAND EXPERIENCE</small>
         </div>
 
         <div className="shopping-heading">
 
-          <p className="mini-label">DISCOVER → EXPLORE → CHOOSE</p>
+          <p className="mini-label">
+            STORY → CONNECTION → TRUST
+          </p>
 
           <h2>
-            Shopping should feel
-            <em>natural.</em>
+            Let customers
+            <em>meet the brand.</em>
           </h2>
 
         </div>
@@ -361,89 +271,101 @@ function FNJewelryCaseStudy() {
         <div className="editorial-grid">
 
           <EditorialImage
-            src={capture2}
-            alt="FN Jewelry shop collection"
-            label="Shop / Collection"
-            number="06.01"
+            src={ourStory2}
+            alt="FN Jewelry brand story continuation"
+            label="Our Story / Brand Experience"
+            number="04.01"
           />
 
           <EditorialImage
-            src={capture3}
-            alt="FN Jewelry product grid"
-            label="Product Grid"
-            number="06.02"
+            src={bestseller}
+            alt="FN Jewelry bestseller collection"
+            label="Bestsellers / Product Discovery"
+            number="04.02"
           />
 
         </div>
 
       </section>
 
+
       {/* =========================
-          PRODUCT EXPERIENCE
+          SHOPPING EXPERIENCE
       ========================= */}
 
       <section className="product-section">
 
         <div className="section-index">
-          <span>07</span>
-          <small>PRODUCT EXPERIENCE</small>
+          <span>05</span>
+          <small>SHOPPING EXPERIENCE</small>
         </div>
 
         <div className="product-layout">
 
           <div className="product-copy">
 
-            <p className="mini-label">THE PRODUCT MOMENT</p>
+            <p className="mini-label">
+              DISCOVERY WITHOUT FRICTION
+            </p>
 
             <h2>
-              Let every piece
-              <em>have its moment.</em>
+              Help customers
+              <em>find what feels right.</em>
             </h2>
 
             <p className="lead-copy">
-              Product pages were designed to give each item enough room
-              to breathe while keeping the important shopping information
-              easy to find.
+              Product discovery was structured around clear categories,
+              visual browsing, and focused collections so customers can
+              move naturally through the catalogue without unnecessary
+              complexity.
             </p>
 
             <div className="editorial-note">
-              <span>DESIGN PRINCIPLE</span>
+
+              <span>
+                DESIGN PRINCIPLE
+              </span>
+
               <strong>
-                Product first. Interface second.
+                Make discovery simple. Let the products lead.
               </strong>
+
             </div>
 
           </div>
 
           <EditorialImage
-            src={capture4}
-            alt="FN Jewelry product details"
-            label="Product Details"
-            number="07.01"
+            src={shopByCategory}
+            alt="FN Jewelry shop by category"
+            label="Shop By Category"
+            number="05.01"
           />
 
         </div>
 
       </section>
 
+
       {/* =========================
-          SHOPPING FLOW
+          PRODUCT EDUCATION
       ========================= */}
 
       <section className="flow-section">
 
         <div className="section-index">
-          <span>08</span>
-          <small>SHOPPING FLOW</small>
+          <span>06</span>
+          <small>PRODUCT EDUCATION</small>
         </div>
 
         <div className="flow-header">
 
-          <p className="mini-label">THE JOURNEY</p>
+          <p className="mini-label">
+            DISCOVER → UNDERSTAND → CHOOSE
+          </p>
 
           <h2>
-            From “I like this”
-            <em>to “it’s mine.”</em>
+            Beautiful products
+            <em>should feel easy to understand.</em>
           </h2>
 
         </div>
@@ -452,22 +374,22 @@ function FNJewelryCaseStudy() {
 
           <div>
             <span>01</span>
-            <strong>Product</strong>
+            <strong>Discover</strong>
           </div>
 
           <div>
             <span>02</span>
-            <strong>Cart</strong>
+            <strong>Explore</strong>
           </div>
 
           <div>
             <span>03</span>
-            <strong>Checkout</strong>
+            <strong>Understand</strong>
           </div>
 
           <div>
             <span>04</span>
-            <strong>Confirmation</strong>
+            <strong>Choose</strong>
           </div>
 
         </div>
@@ -475,70 +397,50 @@ function FNJewelryCaseStudy() {
         <div className="editorial-grid">
 
           <EditorialImage
-            src={capture5}
-            alt="FN Jewelry shopping cart"
-            label="Shopping Cart"
-            number="08.01"
+            src={knowYourStones}
+            alt="FN Jewelry know your stones section"
+            label="Know Your Stones / Product Education"
+            number="06.01"
           />
 
           <EditorialImage
-            src={capture6}
-            alt="FN Jewelry checkout"
-            label="Checkout"
-            number="08.02"
+            src={faq}
+            alt="FN Jewelry frequently asked questions"
+            label="FAQ / Customer Support"
+            number="06.02"
           />
-
-        </div>
-
-        <div className="flow-confirmation">
-
-          <EditorialImage
-            src={capture7}
-            alt="FN Jewelry order confirmation"
-            label="Order Confirmation"
-            number="08.03"
-          />
-
-          <div>
-            <p className="mini-label">THE FINISH</p>
-            <h3>
-              A small moment
-              <em>of reassurance.</em>
-            </h3>
-            <p>
-              The confirmation screen closes the journey clearly,
-              giving customers a sense that everything went exactly
-              as expected.
-            </p>
-          </div>
 
         </div>
 
       </section>
 
+
       {/* =========================
-          MOBILE
+          SHOPPING FLOW
       ========================= */}
 
       <section className="mobile-section">
 
         <div className="section-index">
-          <span>09</span>
-          <small>MOBILE EXPERIENCE</small>
+          <span>07</span>
+          <small>SHOPPING FLOW</small>
         </div>
 
         <div className="mobile-heading">
 
-          <p className="mini-label">SMALL SCREEN / SAME EXPERIENCE</p>
+          <p className="mini-label">
+            THE JOURNEY
+          </p>
 
           <h2>
-            Designed to move
-            <em>with the customer.</em>
+            From “I like this”
+            <em>to “it’s mine.”</em>
           </h2>
 
           <p>
-            Responsive behaviour was treated as part of the design itself,
-            rather than something added at the end.
+            Every important step of the customer journey was connected
+            into one continuous shopping experience — from product
+            selection to checkout.
           </p>
 
         </div>
@@ -546,69 +448,130 @@ function FNJewelryCaseStudy() {
         <div className="mobile-gallery">
 
           <EditorialImage
-            src={capture8}
-            alt="FN Jewelry mobile experience"
-            label="Mobile Homepage"
-            number="09.01"
+            src={cart}
+            alt="FN Jewelry shopping cart"
+            label="Shopping Cart"
+            number="07.01"
           />
 
           <EditorialImage
-            src={capture9}
-            alt="FN Jewelry responsive interface"
-            label="Mobile Shopping Experience"
-            number="09.02"
+            src={checkout}
+            alt="FN Jewelry checkout"
+            label="Checkout"
+            number="07.02"
           />
 
         </div>
 
       </section>
 
+
       {/* =========================
-          COUNTRY / CURRENCY
+          CHECKOUT EXPERIENCE
       ========================= */}
 
       <section className="global-section">
 
         <div className="section-index">
-          <span>10</span>
-          <small>GLOBAL EXPERIENCE</small>
+          <span>08</span>
+          <small>CHECKOUT EXPERIENCE</small>
         </div>
 
         <div className="global-layout">
 
           <div className="global-copy">
 
-            <p className="mini-label">MADE FOR WORLDWIDE</p>
+            <p className="mini-label">
+              SIMPLE → CLEAR → CONFIDENT
+            </p>
 
             <h2>
-              One storefront.
-              <em>Different worlds.</em>
+              The final step
+              <em>should feel effortless.</em>
             </h2>
 
             <p className="lead-copy">
-              Country and currency selection adds another layer of
-              personalization, helping the shopping experience feel
-              relevant to customers across different regions.
+              Checkout was designed to keep the purchasing process focused
+              and understandable, reducing unnecessary friction while
+              keeping the customer informed throughout the journey.
             </p>
 
             <div className="global-stamp">
-              <span>WORLDWIDE</span>
-              <strong>✦</strong>
-              <span>READY</span>
+
+              <span>
+                SIMPLE
+              </span>
+
+              <strong>
+                ✦
+              </strong>
+
+              <span>
+                SECURE
+              </span>
+
             </div>
 
           </div>
 
           <EditorialImage
-            src={capture10}
-            alt="FN Jewelry country and currency selector"
-            label="Country + Currency"
-            number="10.01"
+            src={checkout}
+            alt="FN Jewelry checkout experience"
+            label="Checkout Experience"
+            number="08.01"
           />
 
         </div>
 
       </section>
+
+
+      {/* =========================
+          WORLDWIDE EXPERIENCE
+      ========================= */}
+
+      <section className="design-section">
+
+        <div className="section-index">
+          <span>09</span>
+          <small>GLOBAL EXPERIENCE</small>
+        </div>
+
+        <div className="design-intro">
+
+          <p className="mini-label">
+            MADE FOR WORLDWIDE
+          </p>
+
+          <h2>
+            One storefront.
+            <em>Different worlds.</em>
+          </h2>
+
+          <p>
+            FN Jewelry was designed with a worldwide customer base in
+            mind, making the experience adaptable for visitors shopping
+            from different regions.
+          </p>
+
+        </div>
+
+        <div className="design-pills">
+          <span>Worldwide Delivery</span>
+          <span>Regional Experience</span>
+          <span>Flexible Shopping</span>
+          <span>International Audience</span>
+        </div>
+
+        <EditorialImage
+          src={worldwideDelivery}
+          alt="FN Jewelry worldwide delivery experience"
+          label="Worldwide Delivery"
+          number="09.01"
+        />
+
+      </section>
+
 
       {/* =========================
           DEVELOPMENT
@@ -617,13 +580,15 @@ function FNJewelryCaseStudy() {
       <section className="development-section">
 
         <div className="section-index">
-          <span>11</span>
+          <span>10</span>
           <small>DEVELOPMENT</small>
         </div>
 
         <div className="development-header">
 
-          <p className="mini-label">UNDER THE SURFACE</p>
+          <p className="mini-label">
+            UNDER THE SURFACE
+          </p>
 
           <h2>
             Designed beautifully.
@@ -631,8 +596,9 @@ function FNJewelryCaseStudy() {
           </h2>
 
           <p>
-            The final experience was developed as a responsive React
-            application with reusable components and a complete shopping flow.
+            The experience was developed as a responsive React application
+            with reusable components, structured navigation, and an
+            interconnected e-commerce journey.
           </p>
 
         </div>
@@ -642,49 +608,60 @@ function FNJewelryCaseStudy() {
           <div>
             <span>01</span>
             <h3>React</h3>
-            <p>Component-based architecture for a flexible interface.</p>
+            <p>
+              Component-based architecture for a flexible interface.
+            </p>
           </div>
 
           <div>
             <span>02</span>
             <h3>JavaScript</h3>
-            <p>Interactive functionality and dynamic behaviour.</p>
+            <p>
+              Interactive functionality and dynamic behaviour.
+            </p>
           </div>
 
           <div>
             <span>03</span>
             <h3>Tailwind CSS</h3>
-            <p>Responsive styling and consistent visual systems.</p>
+            <p>
+              Responsive styling and consistent visual systems.
+            </p>
           </div>
 
           <div>
             <span>04</span>
             <h3>React Router</h3>
-            <p>Structured navigation between shopping experiences.</p>
+            <p>
+              Structured navigation across the portfolio experience.
+            </p>
           </div>
 
         </div>
 
       </section>
 
+
       {/* =========================
-          CHALLENGES
+          SUPPORT / INFORMATION
       ========================= */}
 
       <section className="challenge-section">
 
         <div className="section-index">
-          <span>12</span>
-          <small>CHALLENGES + SOLUTIONS</small>
+          <span>11</span>
+          <small>SUPPORT EXPERIENCE</small>
         </div>
 
         <div className="challenge-header">
 
-          <p className="mini-label">WHAT HAPPENED BEHIND THE SCENES</p>
+          <p className="mini-label">
+            BEYOND THE PURCHASE
+          </p>
 
           <h2>
-            Pretty is easy.
-            <em>Making it work is the craft.</em>
+            Good e-commerce
+            <em>answers questions too.</em>
           </h2>
 
         </div>
@@ -692,47 +669,121 @@ function FNJewelryCaseStudy() {
         <div className="challenge-grid">
 
           <article>
-            <span>CHALLENGE 01</span>
-            <h3>Keeping the experience simple.</h3>
+
+            <span>
+              EXPERIENCE 01
+            </span>
+
+            <h3>
+              Clear information.
+            </h3>
+
             <p>
-              Multiple product categories and shopping steps could easily
-              make the experience feel complicated.
+              Important information was presented in a way that helps
+              customers make decisions without searching through the
+              entire website.
             </p>
+
             <strong>
-              → Solution: clear hierarchy, focused navigation, and a
-              straightforward shopping flow.
+              → Solution: structured content, visual hierarchy, and
+              dedicated information sections.
             </strong>
+
           </article>
 
-          <article>
-            <span>CHALLENGE 02</span>
-            <h3>Maintaining responsive consistency.</h3>
-            <p>
-              The experience needed to remain visually polished across
-              different screen sizes.
-            </p>
-            <strong>
-              → Solution: responsive layouts and component-based styling
-              designed with mobile behaviour in mind.
-            </strong>
-          </article>
 
           <article>
-            <span>CHALLENGE 03</span>
-            <h3>Connecting the entire journey.</h3>
+
+            <span>
+              EXPERIENCE 02
+            </span>
+
+            <h3>
+              Helpful guidance.
+            </h3>
+
             <p>
-              Product discovery, cart, checkout, and confirmation needed
-              to feel like one continuous experience.
+              Educational and FAQ content gives customers additional
+              context before and after exploring products.
             </p>
+
             <strong>
-              → Solution: structured state management and connected
-              shopping interactions.
+              → Solution: dedicated educational and support sections.
             </strong>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              EXPERIENCE 03
+            </span>
+
+            <h3>
+              A complete brand experience.
+            </h3>
+
+            <p>
+              The website connects products, stories, information,
+              shopping, and support into one cohesive destination.
+            </p>
+
+            <strong>
+              → Solution: consistent design language across every section.
+            </strong>
+
           </article>
 
         </div>
 
       </section>
+
+
+      {/* =========================
+          FINAL WEBSITE EXPERIENCE
+      ========================= */}
+
+      <section className="shopping-section">
+
+        <div className="section-index">
+          <span>12</span>
+          <small>FINAL WEBSITE EXPERIENCE</small>
+        </div>
+
+        <div className="shopping-heading">
+
+          <p className="mini-label">
+            THE DETAILS MATTER
+          </p>
+
+          <h2>
+            Even the ending
+            <em>belongs to the experience.</em>
+          </h2>
+
+        </div>
+
+        <div className="editorial-grid">
+
+          <EditorialImage
+            src={footer}
+            alt="FN Jewelry website footer"
+            label="Footer / Final Navigation"
+            number="12.01"
+          />
+
+          <EditorialImage
+            src={homepage}
+            alt="FN Jewelry final homepage experience"
+            label="Homepage / Final Experience"
+            number="12.02"
+          />
+
+        </div>
+
+      </section>
+
 
       {/* =========================
           OUTCOME
@@ -747,7 +798,9 @@ function FNJewelryCaseStudy() {
             <small>FINAL OUTCOME</small>
           </div>
 
-          <p className="mini-label">THE RESULT</p>
+          <p className="mini-label">
+            THE RESULT
+          </p>
 
         </div>
 
@@ -757,42 +810,62 @@ function FNJewelryCaseStudy() {
         </h2>
 
         <p className="outcome-copy">
-          FN Jewelry Worldwide brings together visual storytelling,
-          product discovery, responsive design, and a complete e-commerce
-          journey in one cohesive experience.
+          FN Jewelry Worldwide brings together brand storytelling,
+          product discovery, educational content, responsive design,
+          worldwide delivery information, and a complete e-commerce
+          journey into one cohesive digital experience.
         </p>
 
         <div className="outcome-highlights">
 
           <div>
             <strong>01</strong>
-            <span>Premium Visual Direction</span>
+            <span>
+              Premium Visual Direction
+            </span>
           </div>
 
           <div>
             <strong>02</strong>
-            <span>Responsive Experience</span>
+            <span>
+              Responsive Experience
+            </span>
           </div>
 
           <div>
             <strong>03</strong>
-            <span>Complete Shopping Flow</span>
+            <span>
+              Complete Shopping Flow
+            </span>
           </div>
 
           <div>
             <strong>04</strong>
-            <span>Worldwide Experience</span>
+            <span>
+              Worldwide Experience
+            </span>
           </div>
 
         </div>
 
         <div className="final-statement">
-          <span>DESIGNED WITH INTENTION</span>
-          <strong>✦</strong>
-          <span>BUILT WITH PURPOSE</span>
+
+          <span>
+            DESIGNED WITH INTENTION
+          </span>
+
+          <strong>
+            ✦
+          </strong>
+
+          <span>
+            BUILT WITH PURPOSE
+          </span>
+
         </div>
 
       </section>
+
 
       {/* =========================
           FINAL CTA
@@ -800,9 +873,13 @@ function FNJewelryCaseStudy() {
 
       <section className="case-final-cta">
 
-        <div className="cta-decoration">✦</div>
+        <div className="cta-decoration">
+          ✦
+        </div>
 
-        <p className="mini-label">NEXT PROJECT / NEXT IDEA</p>
+        <p className="mini-label">
+          NEXT PROJECT / NEXT IDEA
+        </p>
 
         <h2>
           Have an idea?
@@ -816,24 +893,38 @@ function FNJewelryCaseStudy() {
 
         <div className="cta-buttons">
 
-          <Link to="/" className="cta-secondary">
+          <Link
+            to="/"
+            className="cta-secondary"
+          >
             ← Back to Portfolio
           </Link>
 
-          <a
-            href="mailto:your@email.com"
+          <button
+            type="button"
+            onClick={onWorkTogether}
             className="cta-primary"
           >
             Let's Work Together
             <span>↗</span>
-          </a>
+          </button>
 
         </div>
 
         <div className="cta-footer">
-          <span>MZ.</span>
-          <span>Creative Digital Experiences</span>
-          <span>2026</span>
+
+          <span>
+            MZ.
+          </span>
+
+          <span>
+            Creative Digital Experiences
+          </span>
+
+          <span>
+            2026
+          </span>
+
         </div>
 
       </section>
