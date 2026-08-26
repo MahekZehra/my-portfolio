@@ -10,6 +10,7 @@ import ContactChatbot from "./components/ContactChatbot";
 
 import homeLoanzHome from "./assets/home-loanz-home.png/homeloanz-home.PNG";
 import fnJewelryHome from "./assets/fn-jewelry-home.png/homepage.PNG";
+import teaCoffeeCover from "./assets/tea-coffee-&-greentea.png/new logo.png";
 
 
 /* =========================================================
@@ -77,10 +78,6 @@ function PortfolioHome() {
             </a>
 
           </nav>
-
-          {/* =================================================
-              LET'S TALK
-          ================================================= */}
 
           <button
             type="button"
@@ -934,7 +931,7 @@ function PortfolioHome() {
                 <div className="project-image-frame">
 
                   <img
-                    src="/src/assets/tea-coffee-&-greentea.png/new logo.png"
+                    src={teaCoffeeCover}
                     alt="Tea Coffee & Green Tea digital marketing project"
                     className="project-image"
                   />
@@ -972,13 +969,9 @@ function PortfolioHome() {
                 <div className="project-tags">
 
                   <span>Digital Marketing</span>
-
                   <span>Social Media</span>
-
                   <span>Brand Refresh</span>
-
                   <span>Content Design</span>
-
                   <span>Visual Strategy</span>
 
                 </div>
@@ -1163,8 +1156,6 @@ function PortfolioHome() {
 
           <div className="footer-main">
 
-            {/* BRAND */}
-
             <div className="footer-brand">
 
               <a
@@ -1185,8 +1176,6 @@ function PortfolioHome() {
 
             </div>
 
-
-            {/* EXPLORE */}
 
             <div>
 
@@ -1220,8 +1209,6 @@ function PortfolioHome() {
 
             </div>
 
-
-            {/* CONNECT */}
 
             <div>
 
