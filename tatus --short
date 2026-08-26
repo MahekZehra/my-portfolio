@@ -1,0 +1,232 @@
+warning: in the working copy of 'src/App.jsx', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/App.jsx b/src/App.jsx[m
+[1mindex 97036e1..de2ced7 100644[m
+[1m--- a/src/App.jsx[m
+[1m+++ b/src/App.jsx[m
+[36m@@ -1,8 +1,10 @@[m
+[31m-import { useState } from "react";[m
+[32m+[m[32mimport { useEffect, useState } from "react";[m
+ import { BrowserRouter, Routes, Route } from "react-router-dom";[m
+ [m
+ import FNJewelryCaseStudy from "./pages/FNJewelryCaseStudy";[m
+ import HomeLoansCaseStudy from "./pages/HomeLoansCaseStudy";[m
+[32m+[m[32mimport LumeSkincareCaseStudy from "./pages/LumeSkincareCaseStudy";[m
+[32m+[m[32mimport TeaCoffeeCaseStudy from "./pages/TeaCoffeeCaseStudy";[m
+ [m
+ import ContactChatbot from "./components/ContactChatbot";[m
+ [m
+[36m@@ -14,7 +16,17 @@[m [mimport fnJewelryHome from "./assets/fn-jewelry-home.png/homepage.PNG";[m
+    PORTFOLIO HOME[m
+ ========================================================= */[m
+ [m
+[31m-function PortfolioHome({ onOpenChat }) {[m
+[32m+[m[32mfunction PortfolioHome() {[m
+[32m+[m
+[32m+[m[32m  const [chatOpen, setChatOpen] = useState(false);[m
+[32m+[m
+[32m+[m[32m  const openChat = () => {[m
+[32m+[m[32m    setChatOpen(true);[m
+[32m+[m[32m  };[m
+[32m+[m
+[32m+[m[32m  const closeChat = () => {[m
+[32m+[m[32m    setChatOpen(false);[m
+[32m+[m[32m  };[m
+ [m
+   return ([m
+     <div className="portfolio">[m
+[36m@@ -73,7 +85,7 @@[m [mfunction PortfolioHome({ onOpenChat }) {[m
+           <button[m
+             type="button"[m
+             className="nav-button"[m
+[31m-            onClick={onOpenChat}[m
+[32m+[m[32m            onClick={openChat}[m
+           >[m
+             Let's Talk[m
+             <span>↗</span>[m
+[36m@@ -130,7 +142,7 @@[m [mfunction PortfolioHome({ onOpenChat }) {[m
+                 <button[m
+                   type="button"[m
+                   className="secondary-button"[m
+[31m-                  onClick={onOpenChat}[m
+[32m+[m[32m                  onClick={openChat}[m
+                 >[m
+                   Let's Work Together[m
+                   <span>→</span>[m
+[36m@@ -157,7 +169,9 @@[m [mfunction PortfolioHome({ onOpenChat }) {[m
+             </div>[m
+ [m
+ [m
+[31m-            {/* HERO VISUAL */}[m
+[32m+[m[32m            {/* =================================================[m
+[32m+[m[32m                HERO VISUAL[m
+[32m+[m[32m            ================================================= */}[m
+ [m
+             <div className="hero-visual">[m
+ [m
+[36m@@ -467,107 +481,143 @@[m [mfunction PortfolioHome({ onOpenChat }) {[m
+             <div className="services-grid">[m
+ [m
+               <article className="service-card service-card-lavender">[m
+[32m+[m
+                 <div className="service-top">[m
+                   <span>01</span>[m
+                   <span className="service-arrow">↗</span>[m
+                 </div>[m
+ [m
+                 <div>[m
+[31m-                  <h3>Web Design & Development</h3>[m
+[32m+[m
+[32m+[m[32m                  <h3>[m
+[32m+[m[32m                    Web Design & Development[m
+[32m+[m[32m                  </h3>[m
+ [m
+                   <p>[m
+                     Modern, responsive websites designed to give brands[m
+                     a professional online presence and a smooth user[m
+                     experience.[m
+                   </p>[m
+[32m+[m
+                 </div>[m
+[32m+[m
+               </article>[m
+ [m
+ [m
+               <article className="service-card service-card-blush">[m
+[32m+[m
+                 <div className="service-top">[m
+                   <span>02</span>[m
+                   <span className="service-arrow">↗</span>[m
+                 </div>[m
+ [m
+                 <div>[m
+[31m-                  <h3>UI/UX Design</h3>[m
+[32m+[m
+[32m+[m[32m                  <h3>[m
+[32m+[m[32m                    UI/UX Design[m
+[32m+[m[32m                  </h3>[m
+ [m
+                   <p>[m
+                     Clean and intuitive interfaces focused on usability,[m
+                     visual hierarchy, and meaningful user experiences.[m
+                   </p>[m
+[32m+[m
+                 </div>[m
+[32m+[m
+               </article>[m
+ [m
+ [m
+               <article className="service-card service-card-peach">[m
+[32m+[m
+                 <div className="service-top">[m
+                   <span>03</span>[m
+                   <span className="service-arrow">↗</span>[m
+                 </div>[m
+ [m
+                 <div>[m
+[31m-                  <h3>Digital Marketing</h3>[m
+[32m+[m
+[32m+[m[32m                  <h3>[m
+[32m+[m[32m                    Digital Marketing[m
+[32m+[m[32m                  </h3>[m
+ [m
+                   <p>[m
+                     Digital strategies focused on improving online[m
+                     visibility, reaching the right audience, and building[m
+                     stronger brands.[m
+                   </p>[m
+[32m+[m
+                 </div>[m
+[32m+[m
+               </article>[m
+ [m
+ [m
+               <article className="service-card service-card-sage">[m
+[32m+[m
+                 <div className="service-top">[m
+                   <span>04</span>[m
+                   <span className="service-arrow">↗</span>[m
+                 </div>[m
+ [m
+                 <div>[m
+[31m-                  <h3>Social Media Management</h3>[m
+[32m+[m
+[32m+[m[32m                  <h3>[m
+[32m+[m[32m                    Social Media Management[m
+[32m+[m[32m                  </h3>[m
+ [m
+                   <p>[m
+                     Content planning and creative direction designed to keep[m
+                     brands consistent, active, and engaging online.[m
+                   </p>[m
+[32m+[m
+                 </div>[m
+[32m+[m
+               </article>[m
+ [m
+ [m
+               <article className="service-card service-card-butter">[m
+[32m+[m
+                 <div className="service-top">[m
+                   <span>05</span>[m
+                   <span className="service-arrow">↗</span>[m
+                 </div>[m
+ [m
+                 <div>[m
+[31m-                  <h3>Graphic Design</h3>[m
+[32m+[m
+[32m+[m[32m                  <h3>[m
+[32m+[m[32m                    Graphic Design[m
+[32m+[m[32m                  </h3>[m
+ [m
+                   <p>[m
+                     Visual assets that help brands communicate clearly and[m
+                     maintain a consistent professional identity.[m
+                   </p>[m
+[32m+[m
+                 </div>[m
+[32m+[m
+               </article>[m
+ [m
+ [m
+               <article className="service-card service-card-rose">[m
+[32m+[m
+                 <div className="service-top">[m
+                   <span>06</span>[m
+                   <span className="service-arrow">↗</span>[m
+                 </div>[m
+ [m
+                 <div>[m
+[31m-                  <h3>Video Editing</h3>[m
+[32m+[m
+[32m+[m[32m                  <h3>[m
+[32m+[m[32m                    Video Editing[m
+[32m+[m[32m                  </h3>[m
+ [m
+                   <p>[m
+                     Engaging short-form and promotional video content[m
+                     created for social media, campaigns, and brand[m
+                     communication.[m
+                   </p>[m
+[32m+[m
+                 </div>[m
+[32m+[m
+               </article>[m
+ [m
+             </div>[m
+[36m@@ -609,7 +659,9 @@[m [mfunction PortfolioHome({ onOpenChat }) {[m
+             </div>[m
+ [m
+ [m
+[31m-            {/* FN JEWELRY */}[m
+[32m+[m[32m            {/* =================================================[m
+[32m+[m[32m                FN JEWELRY[m
+[32m+[m[32m            ================================================= */}[m
+ [m
+             <article className="featured-project">[m
+ [m
+[36m@@ -653,11 +705,13 @@[m [mfunction PortfolioHome({ onOpenChat }) {[m
+                 </p>[m
+ [m
+                 <div className="project-tags">[m
+[32m+[m
+         

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import FNJewelryCaseStudy from "./pages/FNJewelryCaseStudy";
 import HomeLoansCaseStudy from "./pages/HomeLoansCaseStudy";
+import LumeSkincareCaseStudy from "./pages/LumeSkincareCaseStudy";
+import TeaCoffeeCaseStudy from "./pages/TeaCoffeeCaseStudy";
 
 import ContactChatbot from "./components/ContactChatbot";
 
@@ -14,7 +16,17 @@ import fnJewelryHome from "./assets/fn-jewelry-home.png/homepage.PNG";
    PORTFOLIO HOME
 ========================================================= */
 
-function PortfolioHome({ onOpenChat }) {
+function PortfolioHome() {
+
+  const [chatOpen, setChatOpen] = useState(false);
+
+  const openChat = () => {
+    setChatOpen(true);
+  };
+
+  const closeChat = () => {
+    setChatOpen(false);
+  };
 
   return (
     <div className="portfolio">
@@ -73,7 +85,7 @@ function PortfolioHome({ onOpenChat }) {
           <button
             type="button"
             className="nav-button"
-            onClick={onOpenChat}
+            onClick={openChat}
           >
             Let's Talk
             <span>↗</span>
@@ -130,7 +142,7 @@ function PortfolioHome({ onOpenChat }) {
                 <button
                   type="button"
                   className="secondary-button"
-                  onClick={onOpenChat}
+                  onClick={openChat}
                 >
                   Let's Work Together
                   <span>→</span>
@@ -157,7 +169,9 @@ function PortfolioHome({ onOpenChat }) {
             </div>
 
 
-            {/* HERO VISUAL */}
+            {/* =================================================
+                HERO VISUAL
+            ================================================= */}
 
             <div className="hero-visual">
 
@@ -467,107 +481,143 @@ function PortfolioHome({ onOpenChat }) {
             <div className="services-grid">
 
               <article className="service-card service-card-lavender">
+
                 <div className="service-top">
                   <span>01</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>Web Design & Development</h3>
+
+                  <h3>
+                    Web Design & Development
+                  </h3>
 
                   <p>
                     Modern, responsive websites designed to give brands
                     a professional online presence and a smooth user
                     experience.
                   </p>
+
                 </div>
+
               </article>
 
 
               <article className="service-card service-card-blush">
+
                 <div className="service-top">
                   <span>02</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>UI/UX Design</h3>
+
+                  <h3>
+                    UI/UX Design
+                  </h3>
 
                   <p>
                     Clean and intuitive interfaces focused on usability,
                     visual hierarchy, and meaningful user experiences.
                   </p>
+
                 </div>
+
               </article>
 
 
               <article className="service-card service-card-peach">
+
                 <div className="service-top">
                   <span>03</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>Digital Marketing</h3>
+
+                  <h3>
+                    Digital Marketing
+                  </h3>
 
                   <p>
                     Digital strategies focused on improving online
                     visibility, reaching the right audience, and building
                     stronger brands.
                   </p>
+
                 </div>
+
               </article>
 
 
               <article className="service-card service-card-sage">
+
                 <div className="service-top">
                   <span>04</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>Social Media Management</h3>
+
+                  <h3>
+                    Social Media Management
+                  </h3>
 
                   <p>
                     Content planning and creative direction designed to keep
                     brands consistent, active, and engaging online.
                   </p>
+
                 </div>
+
               </article>
 
 
               <article className="service-card service-card-butter">
+
                 <div className="service-top">
                   <span>05</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>Graphic Design</h3>
+
+                  <h3>
+                    Graphic Design
+                  </h3>
 
                   <p>
                     Visual assets that help brands communicate clearly and
                     maintain a consistent professional identity.
                   </p>
+
                 </div>
+
               </article>
 
 
               <article className="service-card service-card-rose">
+
                 <div className="service-top">
                   <span>06</span>
                   <span className="service-arrow">↗</span>
                 </div>
 
                 <div>
-                  <h3>Video Editing</h3>
+
+                  <h3>
+                    Video Editing
+                  </h3>
 
                   <p>
                     Engaging short-form and promotional video content
                     created for social media, campaigns, and brand
                     communication.
                   </p>
+
                 </div>
+
               </article>
 
             </div>
@@ -609,7 +659,9 @@ function PortfolioHome({ onOpenChat }) {
             </div>
 
 
-            {/* FN JEWELRY */}
+            {/* =================================================
+                FN JEWELRY
+            ================================================= */}
 
             <article className="featured-project">
 
@@ -653,11 +705,13 @@ function PortfolioHome({ onOpenChat }) {
                 </p>
 
                 <div className="project-tags">
+
                   <span>E-Commerce</span>
                   <span>Responsive Design</span>
                   <span>UI/UX</span>
                   <span>Shopping Flow</span>
                   <span>Country & Currency</span>
+
                 </div>
 
                 <a
@@ -673,7 +727,9 @@ function PortfolioHome({ onOpenChat }) {
             </article>
 
 
-            {/* HOME LOANS */}
+            {/* =================================================
+                HOME LOANS
+            ================================================= */}
 
             <article className="featured-project">
 
@@ -718,15 +774,217 @@ function PortfolioHome({ onOpenChat }) {
                 </p>
 
                 <div className="project-tags">
+
                   <span>Web Design</span>
                   <span>Responsive Design</span>
                   <span>Mortgage</span>
                   <span>Calculator</span>
                   <span>UI/UX</span>
+
                 </div>
 
                 <a
                   href="/case-study/home-loans"
+                  className="project-link"
+                >
+                  View Full Case Study
+                  <span>↗</span>
+                </a>
+
+              </div>
+
+            </article>
+
+
+            {/* =================================================
+                LUME SKINCARE
+            ================================================= */}
+
+            <article className="featured-project">
+
+              <div className="project-visual">
+
+                <div
+                  className="project-image-frame"
+                  style={{
+                    overflow: "hidden",
+                  }}
+                >
+
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      minHeight: "420px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background:
+                        "linear-gradient(135deg, #f8eeee, #f5e7e4)",
+                      overflow: "hidden",
+                    }}
+                  >
+
+                    <div
+                      style={{
+                        textAlign: "center",
+                        padding: "40px",
+                      }}
+                    >
+
+                      <span
+                        style={{
+                          display: "block",
+                          marginBottom: "12px",
+                          fontSize: "11px",
+                          letterSpacing: "0.18em",
+                          fontWeight: "700",
+                          color: "#9d7777",
+                        }}
+                      >
+                        DIGITAL MARKETING
+                      </span>
+
+                      <h3
+                        style={{
+                          margin: 0,
+                          fontFamily:
+                            '"Playfair Display", Georgia, serif',
+                          fontSize: "48px",
+                          fontWeight: "500",
+                          color: "#4d3b3b",
+                        }}
+                      >
+                        Lume
+                        <em
+                          style={{
+                            display: "block",
+                            fontWeight: "400",
+                            color: "#9d7777",
+                          }}
+                        >
+                          Skincare.
+                        </em>
+                      </h3>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div className="project-content">
+
+                <div className="project-content-top">
+
+                  <p className="project-category">
+                    DIGITAL MARKETING · SOCIAL MEDIA · CONTENT
+                  </p>
+
+                  <span className="project-year">
+                    2026
+                  </span>
+
+                </div>
+
+                <h3>
+                  Lume Skincare
+                </h3>
+
+                <p className="project-description">
+                  A conceptual digital marketing project exploring how a
+                  modern skincare brand could build a softer, educational,
+                  and wellness-led presence on Instagram.
+                </p>
+
+                <div className="project-tags">
+
+                  <span>Digital Marketing</span>
+                  <span>Social Media</span>
+                  <span>Content Strategy</span>
+                  <span>Instagram</span>
+                  <span>Content Design</span>
+
+                </div>
+
+                <a
+                  href="/case-study/lume-skincare"
+                  className="project-link"
+                >
+                  View Full Case Study
+                  <span>↗</span>
+                </a>
+
+              </div>
+
+            </article>
+
+
+            {/* =================================================
+                TEA COFFEE & GREEN TEA
+            ================================================= */}
+
+            <article className="featured-project">
+
+              <div className="project-visual">
+
+                <div className="project-image-frame">
+
+                  <img
+                    src="/src/assets/tea-coffee-&-greentea.png/new logo.png"
+                    alt="Tea Coffee & Green Tea digital marketing project"
+                    className="project-image"
+                  />
+
+                </div>
+
+              </div>
+
+
+              <div className="project-content">
+
+                <div className="project-content-top">
+
+                  <p className="project-category">
+                    DIGITAL MARKETING · SOCIAL MEDIA · BRAND CONTENT
+                  </p>
+
+                  <span className="project-year">
+                    2026
+                  </span>
+
+                </div>
+
+                <h3>
+                  Tea Coffee & Green Tea
+                </h3>
+
+                <p className="project-description">
+                  A conceptual digital marketing project exploring how a
+                  tea and coffee brand could refresh its visual identity,
+                  strengthen social media communication, and create a more
+                  engaging content presence.
+                </p>
+
+                <div className="project-tags">
+
+                  <span>Digital Marketing</span>
+
+                  <span>Social Media</span>
+
+                  <span>Brand Refresh</span>
+
+                  <span>Content Design</span>
+
+                  <span>Visual Strategy</span>
+
+                </div>
+
+                <a
+                  href="/case-study/tea-coffee"
                   className="project-link"
                 >
                   View Full Case Study
@@ -882,7 +1140,7 @@ function PortfolioHome({ onOpenChat }) {
             <button
               type="button"
               className="contact-button"
-              onClick={onOpenChat}
+              onClick={openChat}
             >
               Let's Work Together
               <span>↗</span>
@@ -973,8 +1231,6 @@ function PortfolioHome({ onOpenChat }) {
 
               <div className="footer-socials">
 
-                {/* LINKEDIN */}
-
                 <a
                   href="https://www.linkedin.com/in/mahek-zehra-b141263b2/"
                   target="_blank"
@@ -983,9 +1239,6 @@ function PortfolioHome({ onOpenChat }) {
                   LinkedIn ↗
                 </a>
 
-
-                {/* INSTAGRAM */}
-
                 <a
                   href="#"
                   target="_blank"
@@ -993,9 +1246,6 @@ function PortfolioHome({ onOpenChat }) {
                 >
                   Instagram ↗
                 </a>
-
-
-                {/* GITHUB */}
 
                 <a
                   href="https://github.com/MahekZehra"
@@ -1031,7 +1281,6 @@ function PortfolioHome({ onOpenChat }) {
 
       {/* =====================================================
           FLOATING WHATSAPP BUTTON
-          VISIBLE ON PORTFOLIO HOME
       ===================================================== */}
 
       <a
@@ -1055,9 +1304,11 @@ function PortfolioHome({ onOpenChat }) {
           textDecoration: "none",
           fontSize: "28px",
           lineHeight: "1",
-          boxShadow: "0 10px 28px rgba(37, 211, 102, 0.30)",
+          boxShadow:
+            "0 10px 28px rgba(37, 211, 102, 0.30)",
           zIndex: 9990,
-          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+          transition:
+            "transform 0.2s ease, box-shadow 0.2s ease",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "scale(1.08)";
@@ -1070,6 +1321,7 @@ function PortfolioHome({ onOpenChat }) {
             "0 10px 28px rgba(37, 211, 102, 0.30)";
         }}
       >
+
         <span
           aria-hidden="true"
           style={{
@@ -1081,65 +1333,12 @@ function PortfolioHome({ onOpenChat }) {
         >
           ☎
         </span>
+
       </a>
 
-    </div>
-  );
-}
-
-
-/* =========================================================
-   ROUTES
-========================================================= */
-
-function App() {
-
-  const [chatOpen, setChatOpen] = useState(false);
-
-  const openChat = () => {
-    setChatOpen(true);
-  };
-
-  const closeChat = () => {
-    setChatOpen(false);
-  };
-
-  return (
-    <BrowserRouter>
-
-      <Routes>
-
-        <Route
-          path="/"
-          element={
-            <PortfolioHome
-              onOpenChat={openChat}
-            />
-          }
-        />
-
-        <Route
-          path="/case-study/fn-jewelry"
-          element={
-            <FNJewelryCaseStudy
-              onWorkTogether={openChat}
-            />
-          }
-        />
-
-        <Route
-          path="/case-study/home-loans"
-          element={
-            <HomeLoansCaseStudy
-              onWorkTogether={openChat}
-            />
-          }
-        />
-
-      </Routes>
 
       {/* =====================================================
-          CONTACT CHATBOT
+          HOME PAGE CHATBOT
       ===================================================== */}
 
       {chatOpen && (
@@ -1148,7 +1347,122 @@ function App() {
         />
       )}
 
+    </div>
+  );
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+function App() {
+
+  const [globalChatOpen, setGlobalChatOpen] = useState(false);
+
+
+  /* =========================================================
+     GLOBAL CHATBOT EVENT
+  ========================================================= */
+
+  useEffect(() => {
+
+    const handleOpenChat = () => {
+      setGlobalChatOpen(true);
+    };
+
+    window.addEventListener(
+      "open-contact-chatbot",
+      handleOpenChat
+    );
+
+    return () => {
+
+      window.removeEventListener(
+        "open-contact-chatbot",
+        handleOpenChat
+      );
+
+    };
+
+  }, []);
+
+
+  const closeGlobalChat = () => {
+    setGlobalChatOpen(false);
+  };
+
+
+  return (
+
+    <BrowserRouter>
+
+      <Routes>
+
+        {/* ===================================================
+            PORTFOLIO HOME
+        =================================================== */}
+
+        <Route
+          path="/"
+          element={<PortfolioHome />}
+        />
+
+
+        {/* ===================================================
+            FN JEWELRY CASE STUDY
+        =================================================== */}
+
+        <Route
+          path="/case-study/fn-jewelry"
+          element={<FNJewelryCaseStudy />}
+        />
+
+
+        {/* ===================================================
+            HOME LOANS CASE STUDY
+        =================================================== */}
+
+        <Route
+          path="/case-study/home-loans"
+          element={<HomeLoansCaseStudy />}
+        />
+
+
+        {/* ===================================================
+            LUME SKINCARE CASE STUDY
+        =================================================== */}
+
+        <Route
+          path="/case-study/lume-skincare"
+          element={<LumeSkincareCaseStudy />}
+        />
+
+
+        {/* ===================================================
+            TEA COFFEE & GREEN TEA CASE STUDY
+        =================================================== */}
+
+        <Route
+          path="/case-study/tea-coffee"
+          element={<TeaCoffeeCaseStudy />}
+        />
+
+      </Routes>
+
+
+      {/* =====================================================
+          GLOBAL CONTACT CHATBOT
+      ===================================================== */}
+
+      {globalChatOpen && (
+        <ContactChatbot
+          onClose={closeGlobalChat}
+        />
+      )}
+
     </BrowserRouter>
+
   );
 }
 
