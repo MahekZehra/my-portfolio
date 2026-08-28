@@ -1,0 +1,739 @@
+/* =========================================================
+   MAHEK ZEHRA — CONTACT CHATBOT
+   Lavender + Soft Pink + Subtle Rose
+========================================================= */
+
+.mz-chatbot-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(52, 38, 58, 0.08);
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   MAIN CHATBOT
+========================================================= */
+
+.mz-chatbot-shell {
+  position: relative;
+
+  width: min(390px, calc(100vw - 32px));
+  max-height: min(650px, calc(100vh - 32px));
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaff 0%,
+      #faf5ff 48%,
+      #fff7fa 100%
+    );
+
+  border: 1px solid rgba(184, 151, 198, 0.28);
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 80px rgba(88, 61, 96, 0.18),
+    0 8px 28px rgba(88, 61, 96, 0.10);
+
+  color: #433847;
+
+  pointer-events: auto;
+
+  animation: mzChatbotEnter 0.32s ease-out;
+}
+
+
+/* =========================================================
+   OPEN ANIMATION
+========================================================= */
+
+@keyframes mzChatbotEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   DECORATIVE STAR
+========================================================= */
+
+.mz-chatbot-star {
+  position: absolute;
+
+  top: 12px;
+  right: 58px;
+
+  color: #b78fc4;
+  font-size: 17px;
+
+  opacity: 0.75;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.mz-chatbot-header {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 20px 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eee4f7 0%,
+      #f9e9f2 100%
+    );
+
+  border-bottom: 1px solid rgba(173, 136, 188, 0.16);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.mz-chatbot-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+.mz-chatbot-avatar {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #c8a8d5,
+      #e7b9ca
+    );
+
+  color: #fff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow:
+    0 6px 18px rgba(155, 112, 168, 0.20);
+}
+
+
+.mz-chatbot-header-text h3 {
+  margin: 0;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 18px;
+  line-height: 1.1;
+
+  color: #453748;
+}
+
+
+.mz-chatbot-header-text h3 span {
+  color: #bd8fbe;
+}
+
+
+.mz-chatbot-header-text small {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 10px;
+  color: #88748b;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.mz-chatbot-close {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(145, 108, 155, 0.18);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  color: #6f5a73;
+
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.mz-chatbot-close:hover {
+  transform: rotate(8deg) scale(1.06);
+
+  background: #fff;
+  color: #b2769b;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.mz-chatbot-body {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 24px 22px 20px;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(174, 132, 188, 0.38)
+    transparent;
+}
+
+
+/* Chrome / Edge / Safari */
+
+.mz-chatbot-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+.mz-chatbot-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.mz-chatbot-body::-webkit-scrollbar-thumb {
+  background: rgba(174, 132, 188, 0.38);
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.mz-chatbot-message {
+  margin-bottom: 22px;
+}
+
+
+.mz-chatbot-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #a87caf;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.mz-chatbot-message h4 {
+  margin: 0 0 15px;
+
+  color: #403443;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 27px;
+  line-height: 1.13;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 600;
+}
+
+
+.mz-chatbot-message h4 span {
+  display: block;
+
+  color: #b47799;
+
+  font-style: italic;
+}
+
+
+.mz-chatbot-message p {
+  margin: 0 0 11px;
+
+  color: #766979;
+
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+
+.mz-chatbot-message p:last-child {
+  margin-bottom: 0;
+}
+
+
+.mz-chatbot-message strong {
+  color: #8f6280;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.mz-chatbot-question {
+  margin: 18px 0 11px;
+
+  color: #5e4c62;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.mz-chatbot-options {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+
+/* =========================================================
+   SERVICE BUTTON
+========================================================= */
+
+.mz-chatbot-option {
+  width: 100%;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 13px 14px;
+
+  border: 1px solid rgba(177, 140, 190, 0.20);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  color: #58485d;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 12px rgba(92, 65, 99, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.mz-chatbot-option:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(183, 132, 169, 0.45);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5edfa,
+      #fff1f5
+    );
+
+  box-shadow:
+    0 8px 20px rgba(130, 94, 139, 0.10);
+}
+
+
+.mz-chatbot-option:active {
+  transform: translateY(0);
+}
+
+
+.mz-chatbot-option-arrow {
+  flex-shrink: 0;
+
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f0e3f5;
+
+  color: #9d72a8;
+
+  font-size: 13px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.mz-chatbot-option:hover
+.mz-chatbot-option-arrow {
+  transform: rotate(5deg);
+
+  background: #ead5e8;
+}
+
+
+/* =========================================================
+   CONTACT OPTIONS
+========================================================= */
+
+.mz-chatbot-contact {
+  width: 100%;
+  min-height: 63px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(177, 140, 190, 0.20);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.80);
+
+  color: inherit;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 3px 12px rgba(92, 65, 99, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.mz-chatbot-contact:hover {
+  transform: translateY(-2px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5edfa,
+      #fff0f5
+    );
+
+  border-color:
+    rgba(183, 132, 169, 0.42);
+}
+
+
+.mz-chatbot-contact-icon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f1e4f5;
+
+  color: #9b6fa5;
+
+  font-size: 17px;
+}
+
+
+.mz-chatbot-contact-content {
+  min-width: 0;
+  flex: 1;
+}
+
+
+.mz-chatbot-contact-content strong {
+  display: block;
+
+  color: #554357;
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+
+.mz-chatbot-contact-content small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8a7a8c;
+
+  font-size: 10px;
+  line-height: 1.35;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.mz-chatbot-back {
+  width: 100%;
+
+  margin-top: 13px;
+
+  padding: 10px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #a06e91;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.mz-chatbot-back:hover {
+  color: #805474;
+
+  transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   FOOTER NOTE
+========================================================= */
+
+.mz-chatbot-footer-note {
+  margin-top: 20px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid rgba(177, 140, 190, 0.14);
+
+  color: #9a899c;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 11px;
+
+  font-style: italic;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .mz-chatbot-overlay {
+    align-items: flex-end;
+
+    padding: 12px;
+  }
+
+
+  .mz-chatbot-shell {
+    width: 100%;
+
+    max-height: calc(100vh - 24px);
+
+    border-radius: 24px;
+  }
+
+
+  .mz-chatbot-header {
+    padding: 17px 17px 15px;
+  }
+
+
+  .mz-chatbot-body {
+    padding: 21px 17px 18px;
+  }
+
+
+  .mz-chatbot-message h4 {
+    font-size: 24px;
+  }
+
+
+  .mz-chatbot-message p {
+    font-size: 12px;
+  }
+
+
+  .mz-chatbot-option {
+    min-height: 48px;
+
+    padding: 11px 12px;
+
+    font-size: 11px;
+  }
+
+
+  .mz-chatbot-contact {
+    min-height: 59px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .mz-chatbot-shell {
+    max-height: calc(100vh - 16px);
+
+    border-radius: 21px;
+  }
+
+
+  .mz-chatbot-overlay {
+    padding: 8px;
+  }
+
+
+  .mz-chatbot-message h4 {
+    font-size: 22px;
+  }
+
+
+  .mz-chatbot-avatar {
+    width: 39px;
+    height: 39px;
+
+    font-size: 13px;
+  }
+
+}

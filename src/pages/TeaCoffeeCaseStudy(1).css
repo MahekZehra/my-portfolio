@@ -1,0 +1,2355 @@
+/* =========================================================
+   TEA · COFFEE · GREEN TEA — CASE STUDY
+   Editorial Fashion Magazine · Feminine · Luxury · Whimsical
+   Clean · Pastel · Professional
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.tea-case-study {
+  --tea-ivory: #fffdf9;
+  --tea-cream: #f8f3ee;
+  --tea-blush: #f3e5e1;
+  --tea-rose: #c99b98;
+  --tea-dusty-rose: #b98382;
+  --tea-champagne: #c8a982;
+  --tea-sage: #dfe7df;
+  --tea-sage-dark: #72806f;
+  --tea-brown: #735c50;
+  --tea-cocoa: #4b3933;
+  --tea-dark: #302724;
+  --tea-muted: #776c66;
+  --tea-soft-text: #a09690;
+  --tea-border: rgba(74, 57, 50, 0.12);
+  --tea-white-border: rgba(255, 255, 255, 0.14);
+
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: var(--tea-cream);
+  color: var(--tea-dark);
+
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.tea-case-study *,
+.tea-case-study *::before,
+.tea-case-study *::after {
+  box-sizing: border-box;
+}
+
+.tea-case-study a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tea-case-study button {
+  font: inherit;
+}
+
+.tea-case-study img {
+  display: block;
+  max-width: 100%;
+}
+
+.tea-case-study h1,
+.tea-case-study h2,
+.tea-case-study h3,
+.tea-case-study p,
+.tea-case-study figure {
+  margin: 0;
+}
+
+
+/* =========================================================
+   GLOBAL EDITORIAL ELEMENTS
+========================================================= */
+
+.tea-mini-label {
+  color: var(--tea-dusty-rose);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.tea-section-index {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+
+  margin-bottom: 68px;
+  padding-bottom: 17px;
+
+  border-bottom: 1px solid var(--tea-border);
+}
+
+.tea-section-index span {
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.tea-section-index small {
+  color: var(--tea-soft-text);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.tea-editorial-nav {
+  position: relative;
+  z-index: 50;
+
+  width: 100%;
+  min-height: 78px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  padding: 0 5.5vw;
+
+  background: rgba(255, 253, 249, 0.88);
+  border-bottom: 1px solid var(--tea-border);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.tea-editorial-logo {
+  justify-self: start;
+
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 600;
+
+  letter-spacing: -0.06em;
+}
+
+.tea-editorial-logo span {
+  color: var(--tea-dusty-rose);
+}
+
+.tea-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  color: var(--tea-soft-text);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-nav-center span + span::before {
+  content: "✦";
+
+  margin-right: 25px;
+
+  color: var(--tea-champagne);
+  font-size: 7px;
+}
+
+.tea-nav-back {
+  justify-self: end;
+
+  color: var(--tea-brown);
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tea-nav-back:hover {
+  color: var(--tea-dusty-rose);
+  transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.tea-editorial-hero {
+  position: relative;
+
+  min-height: 780px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 110px 10vw 100px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 22%,
+      rgba(223, 231, 223, 0.8),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 12% 82%,
+      rgba(243, 229, 225, 0.95),
+      transparent 28%
+    ),
+    var(--tea-cream);
+}
+
+.tea-editorial-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 560px;
+  height: 560px;
+
+  right: -220px;
+  top: 65px;
+
+  border: 1px solid rgba(185, 131, 130, 0.18);
+  border-radius: 50%;
+}
+
+.tea-editorial-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+
+  right: -125px;
+  top: 150px;
+
+  border: 1px solid rgba(114, 128, 111, 0.16);
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   HERO SIDE LABEL
+========================================================= */
+
+.tea-hero-side-label {
+  position: absolute;
+
+  left: 3.5vw;
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.23em;
+
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.tea-hero-kicker {
+  position: relative;
+  z-index: 5;
+
+  margin-bottom: 25px;
+
+  color: var(--tea-dusty-rose);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.23em;
+}
+
+.tea-editorial-hero h1 {
+  position: relative;
+  z-index: 5;
+
+  max-width: 1050px;
+
+  color: var(--tea-cocoa);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(90px, 13vw, 185px);
+  font-weight: 500;
+
+  line-height: 0.72;
+  letter-spacing: -0.07em;
+}
+
+.tea-editorial-hero h1 em {
+  display: block;
+
+  margin-top: 30px;
+  margin-left: 10vw;
+
+  color: var(--tea-sage-dark);
+
+  font-family: "Playfair Display", serif;
+  font-size: 0.42em;
+  font-weight: 400;
+  font-style: italic;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   HERO BOTTOM
+========================================================= */
+
+.tea-hero-bottom {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns: minmax(250px, 410px) 1fr;
+  gap: 10vw;
+
+  margin-top: 105px;
+  padding-top: 27px;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-hero-description {
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-hero-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.tea-hero-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.tea-hero-meta span {
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+}
+
+.tea-hero-meta strong {
+  max-width: 170px;
+
+  color: var(--tea-cocoa);
+
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HERO DECORATIONS
+========================================================= */
+
+.tea-hero-decor {
+  position: absolute;
+  z-index: 3;
+
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+
+  pointer-events: none;
+}
+
+.tea-decor-one {
+  right: 16%;
+  top: 21%;
+
+  font-size: 38px;
+
+  animation: teaFloat 5s ease-in-out infinite;
+}
+
+.tea-decor-two {
+  right: 28%;
+  bottom: 17%;
+
+  color: var(--tea-champagne);
+  font-size: 24px;
+
+  animation: teaFloat 6s ease-in-out infinite reverse;
+}
+
+.tea-hero-orbit-word {
+  position: absolute;
+
+  right: 5%;
+  top: 45%;
+
+  color: rgba(114, 128, 111, 0.14);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+
+  transform: rotate(90deg);
+}
+
+@keyframes teaFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+
+/* =========================================================
+   SHARED HEADINGS
+========================================================= */
+
+.tea-story-title h2,
+.tea-challenge-header h2,
+.tea-refresh-copy h2,
+.tea-strategy-header h2,
+.tea-content-header h2,
+.tea-before-header h2,
+.tea-campaign-header h2,
+.tea-visual-header h2,
+.tea-marketing-header h2,
+.tea-outcome-section h2 {
+  margin-top: 20px;
+
+  color: var(--tea-cocoa);
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(45px, 5.5vw, 75px);
+  font-weight: 500;
+
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.tea-story-title h2 em,
+.tea-challenge-header h2 em,
+.tea-refresh-copy h2 em,
+.tea-strategy-header h2 em,
+.tea-content-header h2 em,
+.tea-before-header h2 em,
+.tea-campaign-header h2 em,
+.tea-visual-header h2 em,
+.tea-marketing-header h2 em,
+.tea-outcome-section h2 em {
+  display: block;
+
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   PROJECT OVERVIEW
+========================================================= */
+
+.tea-story-section {
+  padding: 125px 10vw;
+
+  background: var(--tea-ivory);
+}
+
+.tea-story-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 10vw;
+}
+
+.tea-story-copy {
+  padding-top: 7px;
+}
+
+.tea-story-copy p {
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.tea-story-copy p + p {
+  margin-top: 24px;
+}
+
+.tea-lead-copy {
+  color: var(--tea-cocoa) !important;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px !important;
+  line-height: 1.4 !important;
+}
+
+.tea-story-note {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 25px;
+
+  margin-top: 55px;
+  padding: 25px 0;
+
+  border-top: 1px solid var(--tea-border);
+  border-bottom: 1px solid var(--tea-border);
+}
+
+.tea-story-note span {
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-story-note strong {
+  color: var(--tea-cocoa);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   CHALLENGE
+========================================================= */
+
+.tea-challenge-section {
+  padding: 125px 10vw;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f2e5e1 0%,
+      #faf5ef 50%,
+      #e7eee6 100%
+    );
+}
+
+.tea-challenge-header {
+  max-width: 850px;
+}
+
+.tea-challenge-header > p:last-child {
+  max-width: 650px;
+
+  margin-top: 34px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.tea-challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 80px;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-challenge-grid article {
+  min-height: 285px;
+
+  padding: 32px;
+
+  border-right: 1px solid var(--tea-border);
+}
+
+.tea-challenge-grid article:last-child {
+  border-right: none;
+}
+
+.tea-challenge-grid article > span {
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+
+.tea-challenge-grid h3 {
+  margin-top: 58px;
+
+  color: var(--tea-cocoa);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-challenge-grid p {
+  max-width: 260px;
+
+  margin-top: 17px;
+
+  color: var(--tea-muted);
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   BEFORE SECTION
+========================================================= */
+
+.tea-before-section {
+  padding: 125px 7vw;
+
+  background: var(--tea-cream);
+}
+
+.tea-before-header {
+  max-width: 850px;
+
+  margin-left: 3vw;
+}
+
+.tea-before-header > p:last-child {
+  max-width: 640px;
+
+  margin-top: 34px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-before-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+
+  margin: 75px 3vw 0;
+}
+
+
+/* =========================================================
+   UNIVERSAL IMAGE SYSTEM
+   SAME SIZE FOR EVERY SCREENSHOT
+========================================================= */
+
+.tea-editorial-shot {
+  position: relative;
+
+  min-width: 0;
+}
+
+.tea-shot-frame {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1e8df,
+      #fffaf5
+    );
+
+  border: 1px solid rgba(74, 57, 50, 0.1);
+
+  box-shadow:
+    0 20px 55px rgba(70, 51, 43, 0.08);
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
+}
+
+.tea-editorial-shot:hover .tea-shot-frame {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 30px 70px rgba(70, 51, 43, 0.14);
+}
+
+.tea-shot-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 18px;
+
+  background: var(--tea-ivory);
+
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tea-editorial-shot:hover .tea-shot-frame img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.tea-shot-number {
+  position: absolute;
+  z-index: 10;
+
+  left: -11px;
+  top: -11px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--tea-ivory);
+
+  color: var(--tea-dusty-rose);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 22px rgba(48, 39, 36, 0.13);
+}
+
+.tea-editorial-shot figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 13px 2px 0;
+
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BEFORE STATEMENT
+========================================================= */
+
+.tea-before-statement {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+
+  margin: 70px 3vw 0;
+  padding: 30px 0;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-before-statement span {
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-before-statement strong {
+  max-width: 700px;
+
+  color: var(--tea-cocoa);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   BRAND REFRESH
+========================================================= */
+
+.tea-refresh-section {
+  padding: 125px 10vw;
+
+  background: var(--tea-ivory);
+}
+
+.tea-refresh-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 9vw;
+}
+
+.tea-refresh-copy > p:not(.tea-mini-label) {
+  max-width: 530px;
+
+  margin-top: 28px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-refresh-image {
+  position: relative;
+}
+
+.tea-refresh-image .tea-shot-frame {
+  aspect-ratio: 4 / 3;
+}
+
+.tea-refresh-image .tea-shot-frame img {
+  padding: 35px;
+}
+
+.tea-refresh-image > span {
+  display: block;
+
+  margin-top: 13px;
+
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-refresh-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 80px;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-refresh-pillars article {
+  min-height: 210px;
+
+  padding: 30px;
+
+  border-right: 1px solid var(--tea-border);
+}
+
+.tea-refresh-pillars article:last-child {
+  border-right: none;
+}
+
+.tea-refresh-pillars span {
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+
+.tea-refresh-pillars strong {
+  display: block;
+
+  margin-top: 42px;
+
+  color: var(--tea-cocoa);
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.tea-refresh-pillars p {
+  max-width: 250px;
+
+  margin-top: 12px;
+
+  color: var(--tea-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   STRATEGY
+========================================================= */
+
+.tea-strategy-section {
+  padding: 125px 10vw;
+
+  background: var(--tea-cream);
+}
+
+.tea-strategy-header {
+  max-width: 850px;
+}
+
+.tea-strategy-header > p:last-child {
+  max-width: 630px;
+
+  margin-top: 32px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 75px;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-pillars article {
+  min-height: 290px;
+
+  padding: 30px;
+
+  border-right: 1px solid var(--tea-border);
+}
+
+.tea-pillars article:last-child {
+  border-right: none;
+}
+
+.tea-pillars article > span {
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+
+.tea-pillars h3 {
+  margin-top: 55px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-pillars p {
+  max-width: 230px;
+
+  margin-top: 17px;
+
+  color: var(--tea-muted);
+
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SOCIAL CONTENT
+========================================================= */
+
+.tea-content-section {
+  padding: 125px 7vw;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(243, 229, 225, 0.8),
+      transparent 25%
+    ),
+    var(--tea-ivory);
+}
+
+.tea-content-header {
+  max-width: 850px;
+
+  margin-left: 3vw;
+}
+
+.tea-content-header > p:last-child {
+  max-width: 620px;
+
+  margin-top: 32px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-content-grid {
+  width: min(720px, 100%);
+
+  margin: 75px auto 0;
+}
+
+.tea-content-grid .tea-shot-frame {
+  aspect-ratio: 4 / 3;
+}
+
+.tea-content-note {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+
+  margin: 70px 3vw 0;
+  padding: 30px 0;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-content-note span {
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-content-note strong {
+  max-width: 700px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   SEASONAL CAMPAIGN
+========================================================= */
+
+.tea-campaign-section {
+  padding: 125px 10vw;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e5eee5 0%,
+      #f8f1e9 52%,
+      #f0e0dc 100%
+    );
+}
+
+.tea-campaign-header {
+  max-width: 850px;
+}
+
+.tea-campaign-header > p:last-child {
+  max-width: 650px;
+
+  margin-top: 32px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-campaign-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 8vw;
+
+  margin-top: 75px;
+}
+
+.tea-campaign-image .tea-shot-frame {
+  aspect-ratio: 4 / 3;
+}
+
+.tea-campaign-image .tea-shot-frame img {
+  padding: 20px;
+}
+
+.tea-campaign-image figcaption {
+  display: block;
+
+  margin-top: 13px;
+
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.tea-campaign-copy {
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-campaign-copy > div {
+  padding: 27px 0;
+
+  border-bottom: 1px solid var(--tea-border);
+}
+
+.tea-campaign-copy span {
+  display: block;
+
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-campaign-copy strong {
+  display: block;
+
+  margin-top: 11px;
+
+  color: var(--tea-cocoa);
+
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.tea-campaign-copy p {
+  max-width: 360px;
+
+  margin-top: 8px;
+
+  color: var(--tea-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   VISUAL DIRECTION
+========================================================= */
+
+.tea-visual-section {
+  position: relative;
+
+  padding: 125px 10vw;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f0e2de 0%,
+      #faf4ec 50%,
+      #e4ece3 100%
+    );
+}
+
+.tea-visual-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  right: -190px;
+  bottom: -220px;
+
+  border: 1px solid rgba(114, 128, 111, 0.17);
+  border-radius: 50%;
+}
+
+.tea-visual-header {
+  max-width: 850px;
+}
+
+.tea-visual-header > p:last-child {
+  max-width: 620px;
+
+  margin-top: 32px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-visual-principles {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-top: 80px;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-visual-principles div {
+  min-height: 190px;
+
+  padding: 30px;
+
+  border-right: 1px solid var(--tea-border);
+  border-bottom: 1px solid var(--tea-border);
+}
+
+.tea-visual-principles div:nth-child(2n) {
+  border-right: none;
+}
+
+.tea-visual-principles span {
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+
+.tea-visual-principles strong {
+  display: block;
+
+  margin-top: 27px;
+
+  color: var(--tea-cocoa);
+
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tea-visual-principles p {
+  max-width: 370px;
+
+  margin-top: 9px;
+
+  color: var(--tea-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.tea-visual-statement {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 35px;
+
+  margin-top: 75px;
+  padding: 35px 0;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-visual-statement span {
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tea-visual-statement strong {
+  max-width: 700px;
+
+  color: var(--tea-cocoa);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   MARKETING APPROACH
+========================================================= */
+
+.tea-marketing-section {
+  padding: 125px 10vw;
+
+  background: var(--tea-ivory);
+}
+
+.tea-marketing-header {
+  max-width: 850px;
+}
+
+.tea-marketing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 75px;
+
+  border-top: 1px solid var(--tea-border);
+}
+
+.tea-marketing-grid article {
+  min-height: 290px;
+
+  padding: 30px;
+
+  border-right: 1px solid var(--tea-border);
+}
+
+.tea-marketing-grid article:last-child {
+  border-right: none;
+}
+
+.tea-marketing-grid article > span {
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+
+.tea-marketing-grid h3 {
+  margin-top: 55px;
+
+  color: var(--tea-cocoa);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.tea-marketing-grid p {
+  max-width: 230px;
+
+  margin-top: 16px;
+
+  color: var(--tea-muted);
+
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FINAL OUTCOME
+========================================================= */
+
+.tea-outcome-section {
+  position: relative;
+
+  padding: 125px 10vw 145px;
+
+  overflow: hidden;
+
+  background: var(--tea-dark);
+
+  color: #fffaf5;
+}
+
+.tea-outcome-section::before {
+  content: "✦";
+
+  position: absolute;
+
+  right: 9%;
+  top: 12%;
+
+  color: rgba(201, 155, 152, 0.4);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+
+  animation: teaFloat 5s ease-in-out infinite;
+}
+
+.tea-outcome-section .tea-section-index {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.tea-outcome-section .tea-section-index span {
+  color: var(--tea-rose);
+}
+
+.tea-outcome-section .tea-section-index small {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.tea-outcome-top {
+  display: flex;
+  align-items: flex-end;
+}
+
+.tea-outcome-top .tea-section-index {
+  flex: 1;
+
+  margin-right: 80px;
+}
+
+.tea-outcome-top .tea-mini-label {
+  margin-bottom: 18px;
+}
+
+.tea-outcome-section h2 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 950px;
+
+  color: #fffaf5;
+
+  font-size: clamp(52px, 7vw, 98px);
+}
+
+.tea-outcome-section h2 em {
+  color: var(--tea-rose);
+}
+
+.tea-outcome-copy {
+  max-width: 640px;
+
+  margin-top: 42px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.tea-outcome-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 80px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tea-outcome-highlights div {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  padding: 30px 20px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tea-outcome-highlights div:last-child {
+  border-right: none;
+}
+
+.tea-outcome-highlights strong {
+  color: var(--tea-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+}
+
+.tea-outcome-highlights span {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.tea-final-statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  margin-top: 90px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.tea-final-statement strong {
+  color: var(--tea-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.tea-final-cta {
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 8vw;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(223, 231, 223, 0.72),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(243, 229, 225, 0.85),
+      transparent 25%
+    ),
+    var(--tea-cream);
+}
+
+.tea-final-cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 480px;
+  height: 480px;
+
+  top: 50%;
+  left: 50%;
+
+  border: 1px solid rgba(185, 131, 130, 0.1);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.tea-cta-decoration {
+  position: absolute;
+
+  top: 65px;
+  right: 16%;
+
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+
+  animation: teaFloat 5s ease-in-out infinite;
+}
+
+.tea-final-cta h2 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 950px;
+
+  margin-top: 20px;
+
+  color: var(--tea-cocoa);
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(52px, 7vw, 95px);
+  font-weight: 500;
+
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.tea-final-cta h2 em {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--tea-dusty-rose);
+
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.tea-final-cta > p:not(.tea-mini-label) {
+  position: relative;
+  z-index: 2;
+
+  max-width: 570px;
+
+  margin-top: 30px;
+
+  color: var(--tea-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tea-cta-buttons {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  margin-top: 45px;
+}
+
+.tea-cta-secondary,
+.tea-cta-primary {
+  min-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 0 26px;
+
+  border: 1px solid var(--tea-border);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tea-cta-secondary {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.tea-cta-primary {
+  background: var(--tea-dark);
+
+  color: #fff;
+
+  border-color: var(--tea-dark);
+}
+
+.tea-cta-primary span {
+  font-size: 16px;
+}
+
+.tea-cta-secondary:hover,
+.tea-cta-primary:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 32px rgba(50, 40, 43, 0.12);
+}
+
+.tea-cta-secondary:hover {
+  background: #fff;
+}
+
+.tea-cta-primary:hover {
+  background: var(--tea-dusty-rose);
+
+  border-color: var(--tea-dusty-rose);
+}
+
+.tea-cta-footer {
+  position: absolute;
+
+  left: 6vw;
+  right: 6vw;
+  bottom: 28px;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--tea-border);
+
+  color: var(--tea-soft-text);
+
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.tea-cta-footer span:first-child {
+  color: var(--tea-cocoa);
+
+  font-family: "Playfair Display", serif;
+  font-size: 15px;
+
+  letter-spacing: -0.04em;
+
+  text-transform: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .tea-editorial-hero {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+
+  .tea-hero-side-label {
+    display: none;
+  }
+
+  .tea-story-section,
+  .tea-challenge-section,
+  .tea-refresh-section,
+  .tea-strategy-section,
+  .tea-campaign-section,
+  .tea-visual-section,
+  .tea-marketing-section,
+  .tea-outcome-section {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .tea-story-layout,
+  .tea-refresh-layout {
+    gap: 6vw;
+  }
+
+  .tea-pillars,
+  .tea-marketing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tea-pillars article:nth-child(2),
+  .tea-marketing-grid article:nth-child(2) {
+    border-right: none;
+  }
+
+  .tea-pillars article:nth-child(n + 3),
+  .tea-marketing-grid article:nth-child(n + 3) {
+    border-top: 1px solid var(--tea-border);
+  }
+
+  .tea-outcome-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tea-outcome-highlights div:nth-child(2) {
+    border-right: none;
+  }
+
+  .tea-outcome-highlights div:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* NAV */
+
+  .tea-editorial-nav {
+    min-height: 68px;
+
+    grid-template-columns: auto 1fr auto;
+
+    padding: 0 20px;
+  }
+
+  .tea-nav-center {
+    display: none;
+  }
+
+  .tea-editorial-logo {
+    font-size: 23px;
+  }
+
+  .tea-nav-back {
+    font-size: 8px;
+  }
+
+
+  /* HERO */
+
+  .tea-editorial-hero {
+    min-height: auto;
+
+    padding: 85px 24px 70px;
+
+    background:
+      radial-gradient(
+        circle at 82% 12%,
+        rgba(223, 231, 223, 0.8),
+        transparent 34%
+      ),
+      var(--tea-cream);
+  }
+
+  .tea-editorial-hero::before {
+    width: 280px;
+    height: 280px;
+
+    right: -145px;
+    top: 80px;
+  }
+
+  .tea-editorial-hero::after {
+    width: 220px;
+    height: 220px;
+
+    right: -100px;
+    top: 110px;
+  }
+
+  .tea-hero-kicker {
+    max-width: 300px;
+
+    font-size: 7px;
+    line-height: 1.8;
+  }
+
+  .tea-editorial-hero h1 {
+    font-size: clamp(67px, 22vw, 115px);
+
+    line-height: 0.76;
+  }
+
+  .tea-editorial-hero h1 em {
+    margin-top: 23px;
+    margin-left: 10vw;
+
+    font-size: 0.48em;
+  }
+
+  .tea-hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    margin-top: 65px;
+  }
+
+  .tea-hero-description {
+    font-size: 12px;
+  }
+
+  .tea-hero-meta {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .tea-hero-meta span {
+    font-size: 6px;
+  }
+
+  .tea-hero-meta strong {
+    font-size: 8px;
+  }
+
+  .tea-hero-orbit-word {
+    display: none;
+  }
+
+  .tea-decor-one {
+    right: 9%;
+    top: 12%;
+
+    font-size: 29px;
+  }
+
+  .tea-decor-two {
+    right: 12%;
+    bottom: 10%;
+
+    font-size: 20px;
+  }
+
+
+  /* SECTIONS */
+
+  .tea-story-section,
+  .tea-challenge-section,
+  .tea-before-section,
+  .tea-refresh-section,
+  .tea-strategy-section,
+  .tea-content-section,
+  .tea-campaign-section,
+  .tea-visual-section,
+  .tea-marketing-section,
+  .tea-outcome-section {
+    padding: 82px 22px;
+  }
+
+  .tea-section-index {
+    margin-bottom: 45px;
+  }
+
+  .tea-section-index small {
+    font-size: 7px;
+  }
+
+
+  /* HEADINGS */
+
+  .tea-story-title h2,
+  .tea-challenge-header h2,
+  .tea-refresh-copy h2,
+  .tea-strategy-header h2,
+  .tea-content-header h2,
+  .tea-before-header h2,
+  .tea-campaign-header h2,
+  .tea-visual-header h2,
+  .tea-marketing-header h2,
+  .tea-outcome-section h2 {
+    font-size: clamp(40px, 13vw, 58px);
+
+    line-height: 1;
+  }
+
+
+  /* STORY */
+
+  .tea-story-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .tea-lead-copy {
+    font-size: 22px !important;
+  }
+
+  .tea-story-note {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+
+  /* CHALLENGE */
+
+  .tea-challenge-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 55px;
+  }
+
+  .tea-challenge-grid article {
+    min-height: auto;
+
+    padding: 28px 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--tea-border);
+  }
+
+  .tea-challenge-grid article:last-child {
+    border-bottom: none;
+  }
+
+  .tea-challenge-grid h3 {
+    margin-top: 28px;
+  }
+
+
+  /* BEFORE */
+
+  .tea-before-header,
+  .tea-content-header {
+    margin-left: 0;
+  }
+
+  .tea-before-grid {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .tea-before-statement,
+  .tea-content-note {
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .tea-before-statement strong,
+  .tea-content-note strong {
+    font-size: 23px;
+  }
+
+
+  /* IMAGE FRAMES */
+
+  .tea-shot-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .tea-shot-frame img {
+    padding: 12px;
+  }
+
+  .tea-shot-number {
+    width: 30px;
+    height: 30px;
+
+    left: -8px;
+    top: -8px;
+  }
+
+  .tea-editorial-shot figcaption {
+    flex-direction: column;
+    gap: 5px;
+
+    font-size: 6px;
+  }
+
+
+  /* REFRESH */
+
+  .tea-refresh-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .tea-refresh-pillars {
+    grid-template-columns: 1fr;
+
+    margin-top: 55px;
+  }
+
+  .tea-refresh-pillars article {
+    min-height: auto;
+
+    padding: 27px 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--tea-border);
+  }
+
+  .tea-refresh-pillars article:last-child {
+    border-bottom: none;
+  }
+
+  .tea-refresh-pillars strong {
+    margin-top: 25px;
+  }
+
+
+  /* STRATEGY */
+
+  .tea-pillars {
+    grid-template-columns: 1fr;
+
+    margin-top: 55px;
+  }
+
+  .tea-pillars article {
+    min-height: auto;
+
+    padding: 28px 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--tea-border);
+  }
+
+  .tea-pillars article:nth-child(n + 3) {
+    border-top: none;
+  }
+
+  .tea-pillars article:last-child {
+    border-bottom: none;
+  }
+
+  .tea-pillars h3 {
+    margin-top: 25px;
+  }
+
+
+  /* SOCIAL CONTENT */
+
+  .tea-content-grid {
+    width: 100%;
+
+    margin-top: 55px;
+  }
+
+
+  /* CAMPAIGN */
+
+  .tea-campaign-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    margin-top: 55px;
+  }
+
+  .tea-campaign-image .tea-shot-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  /* VISUAL */
+
+  .tea-visual-principles {
+    grid-template-columns: 1fr;
+
+    margin-top: 55px;
+  }
+
+  .tea-visual-principles div {
+    min-height: auto;
+
+    padding: 27px 0;
+
+    border-right: none !important;
+  }
+
+  .tea-visual-principles div:last-child {
+    border-bottom: none;
+  }
+
+  .tea-visual-statement {
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    margin-top: 55px;
+  }
+
+  .tea-visual-statement strong {
+    font-size: 24px;
+  }
+
+
+  /* MARKETING */
+
+  .tea-marketing-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 55px;
+  }
+
+  .tea-marketing-grid article {
+    min-height: auto;
+
+    padding: 28px 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--tea-border);
+  }
+
+  .tea-marketing-grid article:nth-child(n + 3) {
+    border-top: none;
+  }
+
+  .tea-marketing-grid article:last-child {
+    border-bottom: none;
+  }
+
+  .tea-marketing-grid h3 {
+    margin-top: 28px;
+  }
+
+
+  /* OUTCOME */
+
+  .tea-outcome-top {
+    display: block;
+  }
+
+  .tea-outcome-top .tea-section-index {
+    margin-right: 0;
+  }
+
+  .tea-outcome-top .tea-mini-label {
+    display: none;
+  }
+
+  .tea-outcome-highlights {
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 55px;
+  }
+
+  .tea-outcome-highlights div {
+    padding: 22px 10px;
+  }
+
+  .tea-outcome-highlights div:nth-child(2) {
+    border-right: none;
+  }
+
+  .tea-final-statement {
+    gap: 11px;
+
+    margin-top: 60px;
+
+    font-size: 6px;
+    letter-spacing: 0.11em;
+  }
+
+
+  /* CTA */
+
+  .tea-final-cta {
+    min-height: 610px;
+
+    padding: 80px 22px 110px;
+  }
+
+  .tea-final-cta::before {
+    width: 320px;
+    height: 320px;
+  }
+
+  .tea-final-cta h2 {
+    font-size: clamp(45px, 14vw, 65px);
+  }
+
+  .tea-final-cta > p:not(.tea-mini-label) {
+    font-size: 12px;
+  }
+
+  .tea-cta-buttons {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .tea-cta-secondary,
+  .tea-cta-primary {
+    width: 100%;
+    max-width: 310px;
+  }
+
+  .tea-cta-footer {
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+  }
+
+  .tea-cta-footer span:nth-child(2) {
+    display: none;
+  }
+
+  .tea-cta-footer span {
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .tea-hero-meta {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .tea-hero-meta strong {
+    max-width: 220px;
+  }
+
+  .tea-editorial-hero h1 {
+    font-size: clamp(62px, 22vw, 92px);
+  }
+
+  .tea-outcome-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .tea-outcome-highlights div {
+    border-right: none !important;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .tea-outcome-highlights div:first-child {
+    border-top: none;
+  }
+
+  .tea-final-statement {
+    flex-wrap: wrap;
+  }
+
+  .tea-shot-frame img {
+    padding: 9px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tea-case-study *,
+  .tea-case-study *::before,
+  .tea-case-study *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
