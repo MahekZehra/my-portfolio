@@ -737,3 +737,80 @@
   }
 
 }
+/* =========================================================
+   NEOMORPHIC CHATBOT — soft pastel tactile UI
+   ========================================================= */
+.mz-chatbot-overlay {
+  background: rgba(242, 237, 244, 0.28);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.mz-chatbot-shell {
+  background: linear-gradient(145deg, #fffaff 0%, #f8f2fa 48%, #fff8fb 100%);
+  border: 1px solid rgba(255,255,255,.92);
+  box-shadow:
+    18px 18px 42px rgba(92, 72, 100, .16),
+    -12px -12px 30px rgba(255,255,255,.94),
+    inset 1px 1px 0 rgba(255,255,255,.92),
+    inset -1px -1px 0 rgba(185,155,194,.08);
+}
+
+.mz-chatbot-header {
+  background: linear-gradient(145deg, #f2eaf7, #fbeef3);
+  border-bottom: 1px solid rgba(255,255,255,.75);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 5px 16px rgba(112, 84, 120, .06);
+}
+
+.mz-chatbot-avatar {
+  box-shadow:
+    7px 7px 14px rgba(155,112,168,.18),
+    -4px -4px 10px rgba(255,255,255,.9),
+    inset 1px 1px 2px rgba(255,255,255,.5);
+}
+
+.mz-chatbot-close,
+.mz-chatbot-option,
+.mz-chatbot-contact {
+  border-color: rgba(255,255,255,.92);
+  background: linear-gradient(145deg, #fffdfd, #f5eef7);
+  box-shadow:
+    6px 6px 13px rgba(92,65,99,.10),
+    -5px -5px 11px rgba(255,255,255,.95),
+    inset 1px 1px 0 rgba(255,255,255,.8);
+}
+
+.mz-chatbot-close:hover,
+.mz-chatbot-option:hover,
+.mz-chatbot-contact:hover {
+  background: linear-gradient(145deg, #fffaff, #f2e8f6);
+  box-shadow:
+    8px 8px 17px rgba(92,65,99,.12),
+    -5px -5px 12px rgba(255,255,255,.98);
+}
+
+.mz-chatbot-option:active,
+.mz-chatbot-contact:active,
+.mz-chatbot-close:active {
+  transform: translateY(1px) scale(.985);
+  box-shadow:
+    inset 4px 4px 9px rgba(110,80,118,.10),
+    inset -3px -3px 8px rgba(255,255,255,.9);
+}
+
+.mz-chatbot-option-arrow {
+  box-shadow:
+    3px 3px 7px rgba(110,80,118,.10),
+    -2px -2px 5px rgba(255,255,255,.9);
+}
+
+.mz-chatbot-back {
+  transition: transform .2s ease, color .2s ease;
+}
+.mz-chatbot-back:hover { transform: translateX(-3px); color:#9d72a8; }
+
+.mz-chatbot-footer-note {
+  text-shadow: 1px 1px 1px rgba(255,255,255,.9);
+}

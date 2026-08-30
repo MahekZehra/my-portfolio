@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import "./ContactChatbot.css";
 
@@ -17,6 +17,23 @@ const WHATSAPP = "923353149929";
 
 const ContactChatbot = ({ onClose }) => {
   const [selectedService, setSelectedService] = useState(null);
+
+  // Keep the modal tactile and accessible: Escape closes it and the page
+  // behind the neomorphic panel never scrolls while the chat is open.
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") handleClose();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const handleServiceSelect = (service) => {
     setSelectedService(service);

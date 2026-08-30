@@ -41,6 +41,7 @@ function EditorialImage({ src, alt, label, number }) {
 // =========================================================
 
 function TeaCoffeeCaseStudy() {
+  const onWorkTogether = () => window.dispatchEvent(new CustomEvent("open-contact-chatbot"));
   // =======================================================
   // OPEN GLOBAL CHATBOT
   // =======================================================

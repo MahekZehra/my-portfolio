@@ -8,6 +8,7 @@ import LumeMobileCaseStudy from "./pages/LumeMobileCaseStudy";
 import TeaCoffeeCaseStudy from "./pages/TeaCoffeeCaseStudy";
 
 import ContactChatbot from "./components/ContactChatbot";
+import { Magnetic, ClickSpark, GlareHover, SpotlightCard, ShinyText, PastelPill, ElectricCard } from "./components/WowEffects";
 
 import homeLoanzHome from "./assets/home-loanz-home.png/homeloanz-home.PNG";
 import fnJewelryHome from "./assets/fn-jewelry-home.png/homepage.PNG";
@@ -22,6 +23,15 @@ function PortfolioHome() {
 
   const [chatOpen, setChatOpen] = useState(false);
 
+  useEffect(() => {
+    const nodes = document.querySelectorAll('.wow-auto');
+    const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add('is-visible');
+    }), { threshold: 0.12 });
+    nodes.forEach((node) => io.observe(node));
+    return () => io.disconnect();
+  }, []);
+
   const openChat = () => {
     setChatOpen(true);
   };
@@ -30,6 +40,27 @@ function PortfolioHome() {
     setChatOpen(false);
   };
 
+  useEffect(() => {
+    const halo = document.createElement("div");
+    halo.className = "mz-cursor-halo";
+    document.body.appendChild(halo);
+
+    const move = (event) => {
+      halo.style.left = `${event.clientX}px`;
+      halo.style.top = `${event.clientY}px`;
+      halo.classList.add("is-active");
+    };
+    const leave = () => halo.classList.remove("is-active");
+
+    window.addEventListener("pointermove", move);
+    document.documentElement.addEventListener("mouseleave", leave);
+    return () => {
+      window.removeEventListener("pointermove", move);
+      document.documentElement.removeEventListener("mouseleave", leave);
+      halo.remove();
+    };
+  }, []);
+
   return (
     <div className="portfolio">
 
@@ -37,13 +68,15 @@ function PortfolioHome() {
           NAVBAR
       ===================================================== */}
 
-      <header className="navbar">
+      <header className="navbar whimsical-navbar">
+        <div className="nav-sparkle nav-sparkle-one" aria-hidden="true">✦</div>
+        <div className="nav-sparkle nav-sparkle-two" aria-hidden="true">·</div>
 
-        <div className="nav-container">
+        <div className="nav-container whimsical-nav-container">
 
           <a
             href="#top"
-            className="logo"
+            className="logo whimsical-logo"
             onClick={(e) => {
               e.preventDefault();
 
@@ -56,38 +89,26 @@ function PortfolioHome() {
             MZ<span>.</span>
           </a>
 
-          <nav className="nav-links">
+          <nav className="nav-links whimsical-nav-links">
 
-            <a href="#about">
-              About
+            <a href="#about"><span className="nav-spark">✦</span>About
             </a>
 
-            <a href="#services">
-              Services
+            <a href="#services"><span className="nav-spark">✦</span>Services
             </a>
 
-            <a href="#work">
-              Projects
+            <a href="#work"><span className="nav-spark">✦</span>Projects
             </a>
 
-            <a href="#skills">
-              Skills
+            <a href="#skills"><span className="nav-spark">✦</span>Skills
             </a>
 
-            <a href="#contact">
-              Contact
+            <a href="#contact"><span className="nav-spark">✦</span>Contact
             </a>
 
           </nav>
 
-          <button
-            type="button"
-            className="nav-button"
-            onClick={openChat}
-          >
-            Let's Talk
-            <span>↗</span>
-          </button>
+          <Magnetic><button type="button" className="nav-button" onClick={openChat}>Let's Talk <span>↗</span></button></Magnetic>
 
         </div>
 
@@ -104,17 +125,22 @@ function PortfolioHome() {
             HERO
         ===================================================== */}
 
-        <section className="hero">
+        <section className="hero aurora-wrap whimsical-hero">
+          <div className="hero-doodle hero-doodle-one" aria-hidden="true">✦</div>
+          <div className="hero-doodle hero-doodle-two" aria-hidden="true">♡</div>
+          <div className="hero-doodle hero-doodle-three" aria-hidden="true">⌁</div>
+          <div className="hero-floating-note" aria-hidden="true">made with curiosity <span>♡</span></div>
+          <div className="pastel-aurora aurora-one" aria-hidden="true" />
+          <div className="pastel-aurora aurora-two" aria-hidden="true" />
+          <div className="pastel-aurora aurora-three" aria-hidden="true" />
 
           <div className="hero-content">
 
             <div className="hero-text">
 
-              <p className="eyebrow">
-                WEB DESIGN · DIGITAL MARKETING · CREATIVE DESIGN
-              </p>
+              <p className="eyebrow"><ShinyText>WEB DESIGN · DIGITAL MARKETING · CREATIVE DESIGN</ShinyText></p>
 
-              <h1>
+              <h1 className="whimsical-hero-title">
                 I Design Digital Experiences
                 <span>
                   That Help Brands Stand Out.
@@ -129,22 +155,9 @@ function PortfolioHome() {
 
               <div className="hero-buttons">
 
-                <a
-                  href="#work"
-                  className="primary-button"
-                >
-                  View My Work
-                  <span>↗</span>
-                </a>
+                <Magnetic><ClickSpark><a href="#work" className="primary-button">View My Work <span>↗</span></a></ClickSpark></Magnetic>
 
-                <button
-                  type="button"
-                  className="secondary-button"
-                  onClick={openChat}
-                >
-                  Let's Work Together
-                  <span>→</span>
-                </button>
+                <Magnetic><ClickSpark><button type="button" className="secondary-button" onClick={openChat}>Let's Work Together <span>→</span></button></ClickSpark></Magnetic>
 
               </div>
 
@@ -171,9 +184,10 @@ function PortfolioHome() {
                 HERO VISUAL
             ================================================= */}
 
-            <div className="hero-visual">
+            <div className="hero-visual whimsical-hero-visual">
 
-              <div className="hero-visual-card">
+              <div className="hero-visual-card whimsical-hero-card">
+                  <span className="hero-card-sticker" aria-hidden="true">✦</span>
 
                 <div className="hero-visual-top">
 
@@ -228,15 +242,17 @@ function PortfolioHome() {
 
         <section
           id="about"
-          className="about-section section"
+          className="about-section section whimsical-about"
         >
 
-          <div className="section-container">
+          <div className="section-container about-whimsy-container">
 
-            <div className="section-heading">
+            <div className="about-orbit-word" aria-hidden="true">curious · creative · intentional</div>
 
-              <p className="eyebrow">
-                ABOUT ME
+            <div className="section-heading wow-auto about-heading-whimsy">
+
+              <p className="eyebrow about-eyebrow">
+                <span className="eyebrow-spark">✦</span> ABOUT ME <span className="eyebrow-mini-note">a little more about me</span>
               </p>
 
               <h2>
@@ -248,13 +264,15 @@ function PortfolioHome() {
 
             </div>
 
-            <div className="about-grid">
+            <div className="about-grid about-grid-whimsy">
 
               <div className="about-intro">
 
-                <span className="about-number">
+                <span className="about-number about-number-whimsy">
                   01
                 </span>
+
+                <span className="about-handnote">a little bit of me <b>↘</b></span>
 
                 <div
                   className="about-profile"
@@ -336,6 +354,10 @@ function PortfolioHome() {
                   Computer Science, combining technical thinking with a strong
                   interest in design, branding, and digital marketing.
                 </p>
+
+                <div className="about-whimsy-note">
+                  <span>✦</span> curious mind · creative heart
+                </div>
 
               </div>
 
@@ -478,7 +500,7 @@ function PortfolioHome() {
 
             <div className="services-grid">
 
-              <article className="service-card service-card-lavender">
+              <ElectricCard color="#C8B6FF"><SpotlightCard className="service-card service-card-lavender">
 
                 <div className="service-top">
                   <span>01</span>
@@ -499,10 +521,10 @@ function PortfolioHome() {
 
                 </div>
 
-              </article>
+              </SpotlightCard></ElectricCard>
 
 
-              <article className="service-card service-card-blush">
+              <ElectricCard color="#FFB7C5"><SpotlightCard className="service-card service-card-blush">
 
                 <div className="service-top">
                   <span>02</span>
@@ -522,10 +544,10 @@ function PortfolioHome() {
 
                 </div>
 
-              </article>
+              </SpotlightCard></ElectricCard>
 
 
-              <article className="service-card service-card-peach">
+              <ElectricCard color="#FFD6A5"><SpotlightCard className="service-card service-card-peach">
 
                 <div className="service-top">
                   <span>03</span>
@@ -546,10 +568,10 @@ function PortfolioHome() {
 
                 </div>
 
-              </article>
+              </SpotlightCard></ElectricCard>
 
 
-              <article className="service-card service-card-sage">
+              <ElectricCard color="#B8E0D2"><SpotlightCard className="service-card service-card-sage">
 
                 <div className="service-top">
                   <span>04</span>
@@ -569,10 +591,10 @@ function PortfolioHome() {
 
                 </div>
 
-              </article>
+              </SpotlightCard></ElectricCard>
 
 
-              <article className="service-card service-card-butter">
+              <ElectricCard color="#FFF1B8"><SpotlightCard className="service-card service-card-butter">
 
                 <div className="service-top">
                   <span>05</span>
@@ -592,10 +614,10 @@ function PortfolioHome() {
 
                 </div>
 
-              </article>
+              </SpotlightCard></ElectricCard>
 
 
-              <article className="service-card service-card-rose">
+              <ElectricCard color="#F3C7D2"><SpotlightCard className="service-card service-card-rose">
 
                 <div className="service-top">
                   <span>06</span>
@@ -616,7 +638,7 @@ function PortfolioHome() {
 
                 </div>
 
-              </article>
+              </SpotlightCard></ElectricCard>
 
             </div>
 
@@ -636,7 +658,7 @@ function PortfolioHome() {
 
           <div className="section-container">
 
-            <div className="section-heading">
+            <div className="section-heading wow-auto">
 
               <p className="eyebrow">
                 SELECTED WORK
@@ -661,11 +683,11 @@ function PortfolioHome() {
                 FN JEWELRY
             ================================================= */}
 
-            <article className="featured-project">
+            <ElectricCard color="#C8B6FF"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
 
               <div className="project-visual">
 
-                <div className="project-image-frame">
+                <div className="project-image-frame glare-hover">
 
                   <img
                     src={fnJewelryHome}
@@ -722,18 +744,18 @@ function PortfolioHome() {
 
               </div>
 
-            </article>
+            </SpotlightCard></GlareHover></ElectricCard>
 
 
             {/* =================================================
                 HOME LOANS
             ================================================= */}
 
-            <article className="featured-project">
+            <ElectricCard color="#BDE0FE"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
 
               <div className="project-visual">
 
-                <div className="project-image-frame">
+                <div className="project-image-frame glare-hover">
 
                   <img
                     src={homeLoanzHome}
@@ -791,18 +813,18 @@ function PortfolioHome() {
 
               </div>
 
-            </article>
+            </SpotlightCard></GlareHover></ElectricCard>
 
 
             {/* =================================================
                 LUMÉ MOBILE APP
             ================================================= */}
 
-            <article className="featured-project lume-mobile-project">
+            <ElectricCard color="#FFB7C5"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project lume-mobile-project">
 
               <div className="project-visual">
 
-                <div className="project-image-frame lume-mobile-preview">
+                <div className="project-image-frame lume-mobile-preview glare-hover">
 
                   <div className="lume-mobile-preview-glow"></div>
 
@@ -878,19 +900,19 @@ function PortfolioHome() {
 
               </div>
 
-            </article>
+            </SpotlightCard></GlareHover></ElectricCard>
 
 
             {/* =================================================
                 LUME SKINCARE
             ================================================= */}
 
-            <article className="featured-project">
+            <ElectricCard color="#B8E0D2"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
 
               <div className="project-visual">
 
                 <div
-                  className="project-image-frame"
+                  className="project-image-frame glare-hover"
                   style={{
                     overflow: "hidden",
                   }}
@@ -1005,18 +1027,18 @@ function PortfolioHome() {
 
               </div>
 
-            </article>
+            </SpotlightCard></GlareHover></ElectricCard>
 
 
             {/* =================================================
                 TEA COFFEE & GREEN TEA
             ================================================= */}
 
-            <article className="featured-project">
+            <ElectricCard color="#FFD6A5"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
 
               <div className="project-visual">
 
-                <div className="project-image-frame">
+                <div className="project-image-frame glare-hover">
 
                   <img
                     src={teaCoffeeCover}
@@ -1074,7 +1096,7 @@ function PortfolioHome() {
 
               </div>
 
-            </article>
+            </SpotlightCard></GlareHover></ElectricCard>
 
           </div>
 
@@ -1092,7 +1114,7 @@ function PortfolioHome() {
 
           <div className="section-container">
 
-            <div className="section-heading">
+            <div className="section-heading wow-auto">
 
               <p className="eyebrow">
                 SKILLS & TOOLS
@@ -1159,7 +1181,7 @@ function PortfolioHome() {
               ].map(([number, title, description]) => (
 
                 <div
-                  className="skill-card"
+                  className="skill-card wow-static"
                   key={number}
                 >
 
@@ -1169,9 +1191,7 @@ function PortfolioHome() {
 
                   <div>
 
-                    <h3>
-                      {title}
-                    </h3>
+                    <h3><PastelPill tone={number === "01" || number === "03" ? "lavender" : number === "02" || number === "06" ? "blush" : number === "04" || number === "07" ? "blue" : "mint"}>{title}</PastelPill></h3>
 
                     <p>
                       {description}
@@ -1187,6 +1207,15 @@ function PortfolioHome() {
 
           </div>
 
+        </section>
+
+
+        <section className="tech-marquee-section" aria-label="Technology and creative toolkit">
+          <div className="tech-marquee-track">
+            {['React', 'JavaScript', 'UI / UX', 'Responsive Web', 'Figma', 'SEO', 'Digital Marketing', 'Creative Design', 'React Native', 'Git'].map((item, i) => (
+              <span key={`${item}-${i}`}><b>✦</b>{item}</span>
+            ))}
+          </div>
         </section>
 
 
@@ -1218,14 +1247,12 @@ function PortfolioHome() {
               into something impactful.
             </p>
 
-            <button
-              type="button"
-              className="contact-button"
-              onClick={openChat}
-            >
-              Let's Work Together
-              <span>↗</span>
-            </button>
+            <div className="contact-mini-ui" aria-label="Project starter">
+              <label><span>Your name</span><input aria-label="Your name" placeholder="Tell me your name" /></label>
+              <label><span>What are we creating?</span><input aria-label="Project type" placeholder="Website, app, brand or campaign" /></label>
+            </div>
+
+            <Magnetic><ClickSpark><button type="button" className="contact-button" onClick={openChat}>Let's Work Together <span>↗</span></button></ClickSpark></Magnetic>
 
           </div>
 
@@ -1238,28 +1265,31 @@ function PortfolioHome() {
           FOOTER
       ===================================================== */}
 
-      <footer className="footer">
+      <footer className="footer whimsical-footer">
+        <div className="footer-doodle footer-doodle-one" aria-hidden="true">✦</div>
+        <div className="footer-doodle footer-doodle-two" aria-hidden="true">♡</div>
+        <div className="footer-doodle footer-doodle-three" aria-hidden="true">⌁</div>
 
-        <div className="footer-container">
+        <div className="footer-container whimsical-footer-container">
 
-          <div className="footer-main">
+          <div className="footer-main footer-main-whimsy">
 
             <div className="footer-brand">
 
               <a
                 href="#top"
-                className="footer-logo"
+                className="footer-logo whimsical-footer-logo"
               >
                 MZ<span>.</span>
               </a>
 
-              <p>
+              <p className="footer-tagline">
                 Creative digital experiences built with strategy,
                 design, and purpose.
               </p>
 
-              <span className="footer-availability">
-                ● Available for creative projects
+              <span className="footer-availability whimsical-availability">
+                <i>●</i> Available for creative projects
               </span>
 
             </div>
@@ -1337,14 +1367,14 @@ function PortfolioHome() {
           </div>
 
 
-          <div className="footer-bottom">
+          <div className="footer-bottom footer-bottom-whimsy">
 
-            <p>
+            <p className="footer-copyright">
               © 2026 Mahek Zehra. All rights reserved.
             </p>
 
-            <p>
-              Designed & Developed with purpose.
+            <p className="footer-made-with">
+              Designed & Developed with <span>♡</span> purpose.
             </p>
 
           </div>

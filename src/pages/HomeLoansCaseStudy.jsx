@@ -13,7 +13,8 @@ import resources from "../assets/home-loanz-home.png/homeloanz-resources.PNG";
 import reviews from "../assets/home-loanz-home.png/homeloanz-reviews.PNG";
 import whyChooseUs from "../assets/home-loanz-home.png/homeloanz-whychooseus.PNG";
 
-function HomeLoansCaseStudy({ onWorkTogether }) {
+function HomeLoansCaseStudy() {
+  const onWorkTogether = () => window.dispatchEvent(new CustomEvent("open-contact-chatbot"));
   return (
     <div className="home-loans-case-study">
 

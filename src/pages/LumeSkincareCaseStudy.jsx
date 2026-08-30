@@ -52,6 +52,7 @@ function EditorialImage({ src, alt, label, number }) {
 // =========================================================
 
 function LumeSkincareCaseStudy() {
+  const onWorkTogether = () => window.dispatchEvent(new CustomEvent("open-contact-chatbot"));
 
   // =========================================================
   // OPEN GLOBAL CHATBOT

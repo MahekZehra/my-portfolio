@@ -107,6 +107,10 @@ function SectionIndex({ number, label }) {
 }
 
 function LumeMobileCaseStudy() {
+  const openChatbot = () => {
+    window.dispatchEvent(new Event("open-contact-chatbot"));
+  };
+
   return (
     <div className="lma-case">
       <header className="lma-nav">
@@ -183,7 +187,10 @@ function LumeMobileCaseStudy() {
 
         <section className="lma-final-visual"><div className="lma-final-phones"><div><PhoneScreen type="onboarding" /></div><div><PhoneScreen type="home" /></div><div><PhoneScreen type="quiz" /></div><div><PhoneScreen type="product" /></div></div><div className="lma-final-caption"><span>LUMÉ / MOBILE APP / 2026</span><span>END OF CASE STUDY</span></div></section>
 
-        <section className="lma-cta"><p className="lma-kicker">LUMÉ / 2026</p><h2>Small moments.<br /><em>Beautiful experiences.</em></h2><p>A UI/UX concept designed to make skincare feel more personal, more understandable, and more human.</p><Link to="/" className="lma-cta-button">Back to selected work ↗</Link></section>
+        <section className="lma-cta"><p className="lma-kicker">LUMÉ / 2026</p><h2>Small moments.<br /><em>Beautiful experiences.</em></h2><p>A UI/UX concept designed to make skincare feel more personal, more understandable, and more human.</p><div className="lma-cta-actions">
+          <Link to="/" className="lma-cta-button">Back to selected work ↗</Link>
+          <button type="button" className="lma-cta-button lma-work-button" onClick={openChatbot}>Let's Work Together <span>✦</span></button>
+        </div></section>
       </main>
     </div>
   );

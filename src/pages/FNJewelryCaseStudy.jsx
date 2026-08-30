@@ -30,7 +30,8 @@ function EditorialImage({ src, alt, label, number }) {
   );
 }
 
-function FNJewelryCaseStudy({ onWorkTogether }) {
+function FNJewelryCaseStudy() {
+  const onWorkTogether = () => window.dispatchEvent(new CustomEvent("open-contact-chatbot"));
   return (
     <div className="fn-case-study">
 
