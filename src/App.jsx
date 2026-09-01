@@ -5,30 +5,52 @@ import FNJewelryCaseStudy from "./pages/FNJewelryCaseStudy";
 import HomeLoansCaseStudy from "./pages/HomeLoansCaseStudy";
 import LumeSkincareCaseStudy from "./pages/LumeSkincareCaseStudy";
 import LumeMobileCaseStudy from "./pages/LumeMobileCaseStudy";
+import LumeSocialMediaCaseStudy from "./pages/LumeSocialMediaCaseStudy";
+import TeaCoffeeSocialMediaCaseStudy from "./pages/TeaCoffeeSocialMediaCaseStudy";
 import TeaCoffeeCaseStudy from "./pages/TeaCoffeeCaseStudy";
+import HaiderEstatesCaseStudy from "./pages/HaiderEstatesCaseStudy";
+import GraphicDesignCaseStudy from "./pages/GraphicDesignCaseStudy";
 
 import ContactChatbot from "./components/ContactChatbot";
-import { Magnetic, ClickSpark, GlareHover, SpotlightCard, ShinyText, PastelPill, ElectricCard } from "./components/WowEffects";
+import {
+  Magnetic,
+  ClickSpark,
+  GlareHover,
+  SpotlightCard,
+  ShinyText,
+  PastelPill,
+  ElectricCard,
+} from "./components/WowEffects";
 
 import homeLoanzHome from "./assets/home-loanz-home.png/homeloanz-home.PNG";
 import fnJewelryHome from "./assets/fn-jewelry-home.png/homepage.PNG";
 import teaCoffeeCover from "./assets/tea-coffee-&-greentea.png/new logo.png";
-
+import graphicDesignCover from "./assets/graphic-design/graphic-design-cover.jpg";
+import haiderHome from "./assets/haider-estates/site-screens/haider-homepage.png/haider-homepage.png";
 
 /* =========================================================
    PORTFOLIO HOME
 ========================================================= */
 
 function PortfolioHome() {
-
   const [chatOpen, setChatOpen] = useState(false);
+  const [activeService, setActiveService] = useState("All");
 
   useEffect(() => {
-    const nodes = document.querySelectorAll('.wow-auto');
-    const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add('is-visible');
-    }), { threshold: 0.12 });
+    const nodes = document.querySelectorAll(".wow-auto");
+
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        }),
+      { threshold: 0.12 }
+    );
+
     nodes.forEach((node) => io.observe(node));
+
     return () => io.disconnect();
   }, []);
 
@@ -38,6 +60,30 @@ function PortfolioHome() {
 
   const closeChat = () => {
     setChatOpen(false);
+  };
+
+  const handleServiceClick = (service) => {
+    setActiveService(service);
+
+    requestAnimationFrame(() => {
+      document.getElementById("work")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
+
+  const projectMatchesService = (services) =>
+    activeService === "All" || services.includes(activeService);
+
+  const serviceProjectCounts = {
+    "All": 9,
+    "Web Design & Development": 3,
+    "UI/UX Design": 3,
+    "Digital Marketing": 4,
+    "Social Media Management": 4,
+    "Graphic Design": 4,
+    "Video Editing": 0,
   };
 
   useEffect(() => {
@@ -50,10 +96,12 @@ function PortfolioHome() {
       halo.style.top = `${event.clientY}px`;
       halo.classList.add("is-active");
     };
+
     const leave = () => halo.classList.remove("is-active");
 
     window.addEventListener("pointermove", move);
     document.documentElement.addEventListener("mouseleave", leave);
+
     return () => {
       window.removeEventListener("pointermove", move);
       document.documentElement.removeEventListener("mouseleave", leave);
@@ -69,8 +117,13 @@ function PortfolioHome() {
       ===================================================== */}
 
       <header className="navbar whimsical-navbar">
-        <div className="nav-sparkle nav-sparkle-one" aria-hidden="true">✦</div>
-        <div className="nav-sparkle nav-sparkle-two" aria-hidden="true">·</div>
+        <div className="nav-sparkle nav-sparkle-one" aria-hidden="true">
+          ✦
+        </div>
+
+        <div className="nav-sparkle nav-sparkle-two" aria-hidden="true">
+          ·
+        </div>
 
         <div className="nav-container whimsical-nav-container">
 
@@ -91,29 +144,45 @@ function PortfolioHome() {
 
           <nav className="nav-links whimsical-nav-links">
 
-            <a href="#about"><span className="nav-spark">✦</span>About
+            <a href="#about">
+              <span className="nav-spark">✦</span>
+              About
             </a>
 
-            <a href="#services"><span className="nav-spark">✦</span>Services
+            <a href="#services">
+              <span className="nav-spark">✦</span>
+              Services
             </a>
 
-            <a href="#work"><span className="nav-spark">✦</span>Projects
+            <a href="#work">
+              <span className="nav-spark">✦</span>
+              Projects
             </a>
 
-            <a href="#skills"><span className="nav-spark">✦</span>Skills
+            <a href="#skills">
+              <span className="nav-spark">✦</span>
+              Skills
             </a>
 
-            <a href="#contact"><span className="nav-spark">✦</span>Contact
+            <a href="#contact">
+              <span className="nav-spark">✦</span>
+              Contact
             </a>
 
           </nav>
 
-          <Magnetic><button type="button" className="nav-button" onClick={openChat}>Let's Talk <span>↗</span></button></Magnetic>
+          <Magnetic>
+            <button
+              type="button"
+              className="nav-button"
+              onClick={openChat}
+            >
+              Let's Talk <span>↗</span>
+            </button>
+          </Magnetic>
 
         </div>
-
       </header>
-
 
       {/* =====================================================
           MAIN
@@ -126,10 +195,23 @@ function PortfolioHome() {
         ===================================================== */}
 
         <section className="hero aurora-wrap whimsical-hero">
-          <div className="hero-doodle hero-doodle-one" aria-hidden="true">✦</div>
-          <div className="hero-doodle hero-doodle-two" aria-hidden="true">♡</div>
-          <div className="hero-doodle hero-doodle-three" aria-hidden="true">⌁</div>
-          <div className="hero-floating-note" aria-hidden="true">made with curiosity <span>♡</span></div>
+
+          <div className="hero-doodle hero-doodle-one" aria-hidden="true">
+            ✦
+          </div>
+
+          <div className="hero-doodle hero-doodle-two" aria-hidden="true">
+            ♡
+          </div>
+
+          <div className="hero-doodle hero-doodle-three" aria-hidden="true">
+            ⌁
+          </div>
+
+          <div className="hero-floating-note" aria-hidden="true">
+            made with curiosity <span>♡</span>
+          </div>
+
           <div className="pastel-aurora aurora-one" aria-hidden="true" />
           <div className="pastel-aurora aurora-two" aria-hidden="true" />
           <div className="pastel-aurora aurora-three" aria-hidden="true" />
@@ -138,7 +220,11 @@ function PortfolioHome() {
 
             <div className="hero-text">
 
-              <p className="eyebrow"><ShinyText>WEB DESIGN · DIGITAL MARKETING · CREATIVE DESIGN</ShinyText></p>
+              <p className="eyebrow">
+                <ShinyText>
+                  WEB DESIGN · DIGITAL MARKETING · CREATIVE DESIGN
+                </ShinyText>
+              </p>
 
               <h1 className="whimsical-hero-title">
                 I Design Digital Experiences
@@ -155,43 +241,53 @@ function PortfolioHome() {
 
               <div className="hero-buttons">
 
-                <Magnetic><ClickSpark><a href="#work" className="primary-button">View My Work <span>↗</span></a></ClickSpark></Magnetic>
+                <Magnetic>
+                  <ClickSpark>
+                    <a
+                      href="#work"
+                      className="primary-button"
+                    >
+                      View My Work <span>↗</span>
+                    </a>
+                  </ClickSpark>
+                </Magnetic>
 
-                <Magnetic><ClickSpark><button type="button" className="secondary-button" onClick={openChat}>Let's Work Together <span>→</span></button></ClickSpark></Magnetic>
+                <Magnetic>
+                  <ClickSpark>
+                    <button
+                      type="button"
+                      className="secondary-button"
+                      onClick={openChat}
+                    >
+                      Let's Work Together <span>→</span>
+                    </button>
+                  </ClickSpark>
+                </Magnetic>
 
               </div>
 
               <div className="hero-highlights">
-
-                <span>
-                  Creative Direction
-                </span>
-
-                <span>
-                  Digital Experiences
-                </span>
-
-                <span>
-                  Brand Growth
-                </span>
-
+                <span>Creative Direction</span>
+                <span>Digital Experiences</span>
+                <span>Brand Growth</span>
               </div>
 
             </div>
 
-
-            {/* =================================================
-                HERO VISUAL
-            ================================================= */}
-
             <div className="hero-visual whimsical-hero-visual">
 
               <div className="hero-visual-card whimsical-hero-card">
-                  <span className="hero-card-sticker" aria-hidden="true">✦</span>
+
+                <span
+                  className="hero-card-sticker"
+                  aria-hidden="true"
+                >
+                  ✦
+                </span>
 
                 <div className="hero-visual-top">
 
-                  <span className="status-dot"></span>
+                  <span className="status-dot" />
 
                   <span>
                     AVAILABLE FOR WORK
@@ -221,9 +317,8 @@ function PortfolioHome() {
 
               </div>
 
-              <div className="hero-orbit hero-orbit-one"></div>
-
-              <div className="hero-orbit hero-orbit-two"></div>
+              <div className="hero-orbit hero-orbit-one" />
+              <div className="hero-orbit hero-orbit-two" />
 
               <div className="hero-number">
                 01
@@ -234,7 +329,6 @@ function PortfolioHome() {
           </div>
 
         </section>
-
 
         {/* =====================================================
             ABOUT
@@ -247,12 +341,21 @@ function PortfolioHome() {
 
           <div className="section-container about-whimsy-container">
 
-            <div className="about-orbit-word" aria-hidden="true">curious · creative · intentional</div>
+            <div
+              className="about-orbit-word"
+              aria-hidden="true"
+            >
+              curious · creative · intentional
+            </div>
 
             <div className="section-heading wow-auto about-heading-whimsy">
 
               <p className="eyebrow about-eyebrow">
-                <span className="eyebrow-spark">✦</span> ABOUT ME <span className="eyebrow-mini-note">a little more about me</span>
+                <span className="eyebrow-spark">✦</span>
+                ABOUT ME
+                <span className="eyebrow-mini-note">
+                  a little more about me
+                </span>
               </p>
 
               <h2>
@@ -272,7 +375,9 @@ function PortfolioHome() {
                   01
                 </span>
 
-                <span className="about-handnote">a little bit of me <b>↘</b></span>
+                <span className="about-handnote">
+                  a little bit of me <b>↘</b>
+                </span>
 
                 <div
                   className="about-profile"
@@ -293,8 +398,7 @@ function PortfolioHome() {
                       borderRadius: "50%",
                       overflow: "hidden",
                       background: "#f7f2f8",
-                      border:
-                        "5px solid rgba(255,255,255,0.75)",
+                      border: "5px solid rgba(255,255,255,0.75)",
                       boxShadow:
                         "0 12px 30px rgba(70,55,75,0.12)",
                     }}
@@ -356,11 +460,11 @@ function PortfolioHome() {
                 </p>
 
                 <div className="about-whimsy-note">
-                  <span>✦</span> curious mind · creative heart
+                  <span>✦</span>
+                  curious mind · creative heart
                 </div>
 
               </div>
-
 
               <div className="about-text">
 
@@ -464,7 +568,6 @@ function PortfolioHome() {
 
         </section>
 
-
         {/* =====================================================
             SERVICES
         ===================================================== */}
@@ -497,155 +600,232 @@ function PortfolioHome() {
 
             </div>
 
-
             <div className="services-grid">
 
-              <ElectricCard color="#C8B6FF"><SpotlightCard className="service-card service-card-lavender">
+              <ElectricCard color="#C8B6FF">
+                <div
+                  className={`service-card-clickable ${activeService === "Web Design & Development" ? "is-active" : ""}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Show Web Design & Development projects`}
+                  onClick={() => handleServiceClick("Web Design & Development")}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      handleServiceClick("Web Design & Development");
+                    }
+                  }}
+                >
+                  <SpotlightCard className="service-card service-card-lavender">
 
-                <div className="service-top">
-                  <span>01</span>
-                  <span className="service-arrow">↗</span>
+                  <div className="service-top">
+                    <span>01</span>
+                    <span className="service-arrow">↗</span>
+                  </div>
+
+                  <div>
+                    <h3>
+                      Web Design & Development
+                    </h3>
+
+                    <p>
+                      Modern, responsive websites designed to give brands
+                      a professional online presence and a smooth user
+                      experience.
+                    </p>
+                  </div>
+
+                </SpotlightCard>
                 </div>
+              </ElectricCard>
 
-                <div>
+              <ElectricCard color="#FFB7C5">
+                <div
+                  className={`service-card-clickable ${activeService === "UI/UX Design" ? "is-active" : ""}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Show UI/UX Design projects`}
+                  onClick={() => handleServiceClick("UI/UX Design")}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      handleServiceClick("UI/UX Design");
+                    }
+                  }}
+                >
+                  <SpotlightCard className="service-card service-card-blush">
 
-                  <h3>
-                    Web Design & Development
-                  </h3>
+                  <div className="service-top">
+                    <span>02</span>
+                    <span className="service-arrow">↗</span>
+                  </div>
 
-                  <p>
-                    Modern, responsive websites designed to give brands
-                    a professional online presence and a smooth user
-                    experience.
-                  </p>
+                  <div>
+                    <h3>
+                      UI/UX Design
+                    </h3>
 
+                    <p>
+                      Clean and intuitive interfaces focused on usability,
+                      visual hierarchy, and meaningful user experiences.
+                    </p>
+                  </div>
+
+                </SpotlightCard>
                 </div>
+              </ElectricCard>
 
-              </SpotlightCard></ElectricCard>
+              <ElectricCard color="#FFD6A5">
+                <div
+                  className={`service-card-clickable ${activeService === "Digital Marketing" ? "is-active" : ""}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Show Digital Marketing projects`}
+                  onClick={() => handleServiceClick("Digital Marketing")}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      handleServiceClick("Digital Marketing");
+                    }
+                  }}
+                >
+                  <SpotlightCard className="service-card service-card-peach">
 
+                  <div className="service-top">
+                    <span>03</span>
+                    <span className="service-arrow">↗</span>
+                  </div>
 
-              <ElectricCard color="#FFB7C5"><SpotlightCard className="service-card service-card-blush">
+                  <div>
+                    <h3>
+                      Digital Marketing
+                    </h3>
 
-                <div className="service-top">
-                  <span>02</span>
-                  <span className="service-arrow">↗</span>
+                    <p>
+                      Digital strategies focused on improving online
+                      visibility, reaching the right audience, and building
+                      stronger brands.
+                    </p>
+                  </div>
+
+                </SpotlightCard>
                 </div>
+              </ElectricCard>
 
-                <div>
+              <ElectricCard color="#B8E0D2">
+                <div
+                  className={`service-card-clickable ${activeService === "Social Media Management" ? "is-active" : ""}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Show Social Media Management projects`}
+                  onClick={() => handleServiceClick("Social Media Management")}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      handleServiceClick("Social Media Management");
+                    }
+                  }}
+                >
+                  <SpotlightCard className="service-card service-card-sage">
 
-                  <h3>
-                    UI/UX Design
-                  </h3>
+                  <div className="service-top">
+                    <span>04</span>
+                    <span className="service-arrow">↗</span>
+                  </div>
 
-                  <p>
-                    Clean and intuitive interfaces focused on usability,
-                    visual hierarchy, and meaningful user experiences.
-                  </p>
+                  <div>
+                    <h3>
+                      Social Media Management
+                    </h3>
 
+                    <p>
+                      Content planning and creative direction designed to keep
+                      brands consistent, active, and engaging online.
+                    </p>
+                  </div>
+
+                </SpotlightCard>
                 </div>
+              </ElectricCard>
 
-              </SpotlightCard></ElectricCard>
+              <ElectricCard color="#FFF1B8">
+                <div
+                  className={`service-card-clickable ${activeService === "Graphic Design" ? "is-active" : ""}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Show Graphic Design projects`}
+                  onClick={() => handleServiceClick("Graphic Design")}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      handleServiceClick("Graphic Design");
+                    }
+                  }}
+                >
+                  <SpotlightCard className="service-card service-card-butter">
 
+                  <div className="service-top">
+                    <span>05</span>
+                    <span className="service-arrow">↗</span>
+                  </div>
 
-              <ElectricCard color="#FFD6A5"><SpotlightCard className="service-card service-card-peach">
+                  <div>
+                    <h3>
+                      Graphic Design
+                    </h3>
 
-                <div className="service-top">
-                  <span>03</span>
-                  <span className="service-arrow">↗</span>
+                    <p>
+                      Visual assets that help brands communicate clearly and
+                      maintain a consistent professional identity.
+                    </p>
+                  </div>
+
+                </SpotlightCard>
                 </div>
+              </ElectricCard>
 
-                <div>
+              <ElectricCard color="#F3C7D2">
+                <div
+                  className={`service-card-clickable ${activeService === "Video Editing" ? "is-active" : ""}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Show Video Editing projects`}
+                  onClick={() => handleServiceClick("Video Editing")}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      handleServiceClick("Video Editing");
+                    }
+                  }}
+                >
+                  <SpotlightCard className="service-card service-card-rose">
 
-                  <h3>
-                    Digital Marketing
-                  </h3>
+                  <div className="service-top">
+                    <span>06</span>
+                    <span className="service-arrow">↗</span>
+                  </div>
 
-                  <p>
-                    Digital strategies focused on improving online
-                    visibility, reaching the right audience, and building
-                    stronger brands.
-                  </p>
+                  <div>
+                    <h3>
+                      Video Editing
+                    </h3>
 
+                    <p>
+                      Engaging short-form and promotional video content
+                      created for social media, campaigns, and brand
+                      communication.
+                    </p>
+                  </div>
+
+                </SpotlightCard>
                 </div>
-
-              </SpotlightCard></ElectricCard>
-
-
-              <ElectricCard color="#B8E0D2"><SpotlightCard className="service-card service-card-sage">
-
-                <div className="service-top">
-                  <span>04</span>
-                  <span className="service-arrow">↗</span>
-                </div>
-
-                <div>
-
-                  <h3>
-                    Social Media Management
-                  </h3>
-
-                  <p>
-                    Content planning and creative direction designed to keep
-                    brands consistent, active, and engaging online.
-                  </p>
-
-                </div>
-
-              </SpotlightCard></ElectricCard>
-
-
-              <ElectricCard color="#FFF1B8"><SpotlightCard className="service-card service-card-butter">
-
-                <div className="service-top">
-                  <span>05</span>
-                  <span className="service-arrow">↗</span>
-                </div>
-
-                <div>
-
-                  <h3>
-                    Graphic Design
-                  </h3>
-
-                  <p>
-                    Visual assets that help brands communicate clearly and
-                    maintain a consistent professional identity.
-                  </p>
-
-                </div>
-
-              </SpotlightCard></ElectricCard>
-
-
-              <ElectricCard color="#F3C7D2"><SpotlightCard className="service-card service-card-rose">
-
-                <div className="service-top">
-                  <span>06</span>
-                  <span className="service-arrow">↗</span>
-                </div>
-
-                <div>
-
-                  <h3>
-                    Video Editing
-                  </h3>
-
-                  <p>
-                    Engaging short-form and promotional video content
-                    created for social media, campaigns, and brand
-                    communication.
-                  </p>
-
-                </div>
-
-              </SpotlightCard></ElectricCard>
+              </ElectricCard>
 
             </div>
 
           </div>
 
         </section>
-
 
         {/* =====================================================
             SELECTED WORK
@@ -678,433 +858,945 @@ function PortfolioHome() {
 
             </div>
 
+            <div className="work-filter-bar" aria-label="Project service filter">
+              <div className="work-filter-copy">
+                <span>SHOWING</span>
+                <strong>{activeService === "All" ? "All Projects" : activeService}</strong>
+                <small>{serviceProjectCounts[activeService]} {serviceProjectCounts[activeService] === 1 ? "project" : "projects"}</small>
+              </div>
+
+              <button
+                type="button"
+                className={`work-filter-reset ${activeService === "All" ? "is-active" : ""}`}
+                onClick={() => setActiveService("All")}
+              >
+                All Projects
+                <span>↗</span>
+              </button>
+            </div>
 
             {/* =================================================
                 FN JEWELRY
             ================================================= */}
 
-            <ElectricCard color="#C8B6FF"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
+            {projectMatchesService(["Web Design & Development", "UI/UX Design"]) && (
+            <>
+<ElectricCard color="#C8B6FF">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project">
 
-              <div className="project-visual">
+                  <div className="project-visual">
 
-                <div className="project-image-frame glare-hover">
+                    <div className="project-image-frame glare-hover">
 
-                  <img
-                    src={fnJewelryHome}
-                    alt="FN Jewelry Worldwide e-commerce website"
-                    className="project-image"
-                  />
+                      <img
+                        src={fnJewelryHome}
+                        alt="FN Jewelry Worldwide e-commerce website"
+                        className="project-image"
+                      />
 
-                </div>
+                    </div>
 
-              </div>
+                  </div>
 
+                  <div className="project-content">
 
-              <div className="project-content">
+                    <div className="project-content-top">
 
-                <div className="project-content-top">
+                      <p className="project-category">
+                        E-COMMERCE · UI/UX · FRONT-END DEVELOPMENT
+                      </p>
 
-                  <p className="project-category">
-                    E-COMMERCE · UI/UX · FRONT-END DEVELOPMENT
-                  </p>
+                      <span className="project-year">
+                        2026
+                      </span>
 
-                  <span className="project-year">
-                    2026
-                  </span>
+                    </div>
 
-                </div>
+                    <h3>
+                      FN Jewelry Worldwide
+                    </h3>
 
-                <h3>
-                  FN Jewelry Worldwide
-                </h3>
+                    <p className="project-description">
+                      A complete e-commerce experience designed to showcase
+                      jewelry, garments, and Kundan accessories through a
+                      premium, responsive, and intuitive shopping journey.
+                    </p>
 
-                <p className="project-description">
-                  A complete e-commerce experience designed to showcase
-                  jewelry, garments, and Kundan accessories through a
-                  premium, responsive, and intuitive shopping journey.
-                </p>
+                    <div className="project-tags">
+                      <span>E-Commerce</span>
+                      <span>Responsive Design</span>
+                      <span>UI/UX</span>
+                      <span>Shopping Flow</span>
+                      <span>Country & Currency</span>
+                    </div>
 
-                <div className="project-tags">
+                    <a
+                      href="/case-study/fn-jewelry"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
 
-                  <span>E-Commerce</span>
-                  <span>Responsive Design</span>
-                  <span>UI/UX</span>
-                  <span>Shopping Flow</span>
-                  <span>Country & Currency</span>
+                  </div>
 
-                </div>
-
-                <a
-                  href="/case-study/fn-jewelry"
-                  className="project-link"
-                >
-                  View Full Case Study
-                  <span>↗</span>
-                </a>
-
-              </div>
-
-            </SpotlightCard></GlareHover></ElectricCard>
-
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
 
             {/* =================================================
                 HOME LOANS
             ================================================= */}
 
-            <ElectricCard color="#BDE0FE"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
+            {projectMatchesService(["Web Design & Development", "UI/UX Design"]) && (
+            <>
+<ElectricCard color="#BDE0FE">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project">
 
-              <div className="project-visual">
+                  <div className="project-visual">
 
-                <div className="project-image-frame glare-hover">
+                    <div className="project-image-frame glare-hover">
 
-                  <img
-                    src={homeLoanzHome}
-                    alt="Home Loans LLC website"
-                    className="project-image"
-                  />
+                      <img
+                        src={homeLoanzHome}
+                        alt="Home Loans LLC website"
+                        className="project-image"
+                      />
 
-                </div>
+                    </div>
 
-              </div>
+                  </div>
 
+                  <div className="project-content">
 
-              <div className="project-content">
+                    <div className="project-content-top">
 
-                <div className="project-content-top">
+                      <p className="project-category">
+                        FINANCE · WEB DESIGN · FRONT-END DEVELOPMENT
+                      </p>
 
-                  <p className="project-category">
-                    FINANCE · WEB DESIGN · FRONT-END DEVELOPMENT
-                  </p>
+                      <span className="project-year">
+                        2026
+                      </span>
 
-                  <span className="project-year">
-                    2026
-                  </span>
+                    </div>
 
-                </div>
+                    <h3>
+                      Home Loans LLC
+                    </h3>
 
-                <h3>
-                  Home Loans LLC
-                </h3>
+                    <p className="project-description">
+                      A modern mortgage and home-loan website designed to make
+                      financial information easier to explore through clear
+                      sections, interactive tools, and a more approachable
+                      digital experience.
+                    </p>
 
-                <p className="project-description">
-                  A modern mortgage and home-loan website designed to make
-                  financial information easier to explore through clear
-                  sections, interactive tools, and a more approachable
-                  digital experience.
-                </p>
+                    <div className="project-tags">
+                      <span>Web Design</span>
+                      <span>Responsive Design</span>
+                      <span>Mortgage</span>
+                      <span>Calculator</span>
+                      <span>UI/UX</span>
+                    </div>
 
-                <div className="project-tags">
+                    <a
+                      href="/case-study/home-loans"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
 
-                  <span>Web Design</span>
-                  <span>Responsive Design</span>
-                  <span>Mortgage</span>
-                  <span>Calculator</span>
-                  <span>UI/UX</span>
+                  </div>
 
-                </div>
-
-                <a
-                  href="/case-study/home-loans"
-                  className="project-link"
-                >
-                  View Full Case Study
-                  <span>↗</span>
-                </a>
-
-              </div>
-
-            </SpotlightCard></GlareHover></ElectricCard>
-
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
 
             {/* =================================================
                 LUMÉ MOBILE APP
             ================================================= */}
 
-            <ElectricCard color="#FFB7C5"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project lume-mobile-project">
+            {projectMatchesService(["UI/UX Design"]) && (
+            <>
+<ElectricCard color="#FFB7C5">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project lume-mobile-project">
 
-              <div className="project-visual">
+                  <div className="project-visual">
 
-                <div className="project-image-frame lume-mobile-preview glare-hover">
+                    <div className="project-image-frame lume-mobile-preview glare-hover">
 
-                  <div className="lume-mobile-preview-glow"></div>
+                      <div className="lume-mobile-preview-glow" />
 
-                  <div className="lume-preview-phone lume-preview-phone-back">
-                    <div className="lume-preview-notch"></div>
-                    <span className="lume-preview-small-logo">LUMÉ</span>
-                    <div className="lume-preview-orb">✦</div>
-                    <strong>Your ritual,<br />made personal.</strong>
+                      <div className="lume-preview-phone lume-preview-phone-back">
+                        <div className="lume-preview-notch" />
+                        <span className="lume-preview-small-logo">
+                          LUMÉ
+                        </span>
+                        <div className="lume-preview-orb">
+                          ✦
+                        </div>
+                        <strong>
+                          Your ritual,
+                          <br />
+                          made personal.
+                        </strong>
+                      </div>
+
+                      <div className="lume-preview-phone lume-preview-phone-front">
+                        <div className="lume-preview-notch" />
+                        <div className="lume-preview-status">
+                          GOOD MORNING
+                        </div>
+                        <div className="lume-preview-brand">
+                          LUMÉ
+                        </div>
+                        <p className="lume-preview-greeting">
+                          A softer way
+                          <br />
+                          to care for your skin.
+                        </p>
+
+                        <div className="lume-preview-rituals">
+                          <span>
+                            ○
+                            <small>Cleanse</small>
+                          </span>
+
+                          <span>
+                            ✦
+                            <small>Treat</small>
+                          </span>
+
+                          <span>
+                            ◇
+                            <small>Hydrate</small>
+                          </span>
+                        </div>
+
+                        <div className="lume-preview-card">
+                          <small>
+                            YOUR RITUAL
+                          </small>
+
+                          <strong>
+                            Dew Veil
+                          </strong>
+
+                          <span>
+                            Hydrating glow serum · $48
+                          </span>
+                        </div>
+
+                      </div>
+
+                    </div>
+
                   </div>
 
-                  <div className="lume-preview-phone lume-preview-phone-front">
-                    <div className="lume-preview-notch"></div>
-                    <div className="lume-preview-status">GOOD MORNING</div>
-                    <div className="lume-preview-brand">LUMÉ</div>
-                    <p className="lume-preview-greeting">A softer way<br />to care for your skin.</p>
-                    <div className="lume-preview-rituals">
-                      <span>○<small>Cleanse</small></span>
-                      <span>✦<small>Treat</small></span>
-                      <span>◇<small>Hydrate</small></span>
+                  <div className="project-content">
+
+                    <div className="project-content-top">
+
+                      <p className="project-category">
+                        MOBILE APP · UI/UX · PRODUCT DESIGN
+                      </p>
+
+                      <span className="project-year">
+                        2026
+                      </span>
+
                     </div>
-                    <div className="lume-preview-card">
-                      <small>YOUR RITUAL</small>
-                      <strong>Dew Veil</strong>
-                      <span>Hydrating glow serum · $48</span>
+
+                    <h3>
+                      LUMÉ — Skincare Mobile App
+                    </h3>
+
+                    <p className="project-description">
+                      A conceptual skincare mobile experience designed around
+                      personalization, guided rituals, product discovery, and
+                      a calmer everyday self-care journey.
+                    </p>
+
+                    <div className="project-tags">
+                      <span>UI/UX Design</span>
+                      <span>Mobile App</span>
+                      <span>Personalization</span>
+                      <span>Product Discovery</span>
+                      <span>React Native</span>
                     </div>
+
+                    <a
+                      href="/case-study/lume-mobile-app"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
+
                   </div>
 
-                </div>
-
-              </div>
-
-              <div className="project-content">
-
-                <div className="project-content-top">
-
-                  <p className="project-category">
-                    MOBILE APP · UI/UX · PRODUCT DESIGN
-                  </p>
-
-                  <span className="project-year">
-                    2026
-                  </span>
-
-                </div>
-
-                <h3>
-                  LUMÉ — Skincare Mobile App
-                </h3>
-
-                <p className="project-description">
-                  A conceptual skincare mobile experience designed around
-                  personalization, guided rituals, product discovery, and
-                  a calmer everyday self-care journey.
-                </p>
-
-                <div className="project-tags">
-
-                  <span>UI/UX Design</span>
-                  <span>Mobile App</span>
-                  <span>Personalization</span>
-                  <span>Product Discovery</span>
-                  <span>React Native</span>
-
-                </div>
-
-                <a
-                  href="/case-study/lume-mobile-app"
-                  className="project-link"
-                >
-                  View Full Case Study
-                  <span>↗</span>
-                </a>
-
-              </div>
-
-            </SpotlightCard></GlareHover></ElectricCard>
-
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
 
             {/* =================================================
-                LUME SKINCARE
+                LUMÉ SKINCARE
             ================================================= */}
 
-            <ElectricCard color="#B8E0D2"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
+            {projectMatchesService(["Digital Marketing", "Social Media Management"]) && (
+            <>
+<ElectricCard color="#B8E0D2">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project">
 
-              <div className="project-visual">
-
-                <div
-                  className="project-image-frame glare-hover"
-                  style={{
-                    overflow: "hidden",
-                  }}
-                >
-
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      minHeight: "420px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background:
-                        "linear-gradient(135deg, #f8eeee, #f5e7e4)",
-                      overflow: "hidden",
-                    }}
-                  >
+                  <div className="project-visual">
 
                     <div
+                      className="project-image-frame glare-hover"
                       style={{
-                        textAlign: "center",
-                        padding: "40px",
+                        overflow: "hidden",
                       }}
                     >
 
-                      <span
+                      <div
                         style={{
-                          display: "block",
-                          marginBottom: "12px",
-                          fontSize: "11px",
-                          letterSpacing: "0.18em",
-                          fontWeight: "700",
-                          color: "#9d7777",
+                          width: "100%",
+                          height: "100%",
+                          minHeight: "420px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          background:
+                            "linear-gradient(135deg, #f8eeee, #f5e7e4)",
+                          overflow: "hidden",
                         }}
                       >
-                        DIGITAL MARKETING
-                      </span>
 
-                      <h3
-                        style={{
-                          margin: 0,
-                          fontFamily:
-                            '"Playfair Display", Georgia, serif',
-                          fontSize: "48px",
-                          fontWeight: "500",
-                          color: "#4d3b3b",
-                        }}
-                      >
-                        Lume
-                        <em
+                        <div
                           style={{
-                            display: "block",
-                            fontWeight: "400",
-                            color: "#9d7777",
+                            textAlign: "center",
+                            padding: "40px",
                           }}
                         >
-                          Skincare.
-                        </em>
-                      </h3>
+
+                          <span
+                            style={{
+                              display: "block",
+                              marginBottom: "12px",
+                              fontSize: "11px",
+                              letterSpacing: "0.18em",
+                              fontWeight: "700",
+                              color: "#9d7777",
+                            }}
+                          >
+                            DIGITAL MARKETING
+                          </span>
+
+                          <h3
+                            style={{
+                              margin: 0,
+                              fontFamily:
+                                '"Playfair Display", Georgia, serif',
+                              fontSize: "48px",
+                              fontWeight: "500",
+                              color: "#4d3b3b",
+                            }}
+                          >
+                            Lume
+
+                            <em
+                              style={{
+                                display: "block",
+                                fontWeight: "400",
+                                color: "#9d7777",
+                              }}
+                            >
+                              Skincare.
+                            </em>
+                          </h3>
+
+                        </div>
+
+                      </div>
 
                     </div>
 
                   </div>
 
-                </div>
+                  <div className="project-content">
 
-              </div>
+                    <div className="project-content-top">
 
+                      <p className="project-category">
+                        DIGITAL MARKETING · SOCIAL MEDIA · CONTENT
+                      </p>
 
-              <div className="project-content">
+                      <span className="project-year">
+                        2026
+                      </span>
 
-                <div className="project-content-top">
+                    </div>
 
-                  <p className="project-category">
-                    DIGITAL MARKETING · SOCIAL MEDIA · CONTENT
-                  </p>
+                    <h3>
+                      Lume Skincare
+                    </h3>
 
-                  <span className="project-year">
-                    2026
-                  </span>
+                    <p className="project-description">
+                      A conceptual digital marketing project exploring how a
+                      modern skincare brand could build a softer, educational,
+                      and wellness-led presence on Instagram.
+                    </p>
 
-                </div>
+                    <div className="project-tags">
+                      <span>Digital Marketing</span>
+                      <span>Social Media</span>
+                      <span>Content Strategy</span>
+                      <span>Instagram</span>
+                      <span>Content Design</span>
+                    </div>
 
-                <h3>
-                  Lume Skincare
-                </h3>
+                    <a
+                      href="/case-study/lume-skincare"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
 
-                <p className="project-description">
-                  A conceptual digital marketing project exploring how a
-                  modern skincare brand could build a softer, educational,
-                  and wellness-led presence on Instagram.
-                </p>
+                  </div>
 
-                <div className="project-tags">
-
-                  <span>Digital Marketing</span>
-                  <span>Social Media</span>
-                  <span>Content Strategy</span>
-                  <span>Instagram</span>
-                  <span>Content Design</span>
-
-                </div>
-
-                <a
-                  href="/case-study/lume-skincare"
-                  className="project-link"
-                >
-                  View Full Case Study
-                  <span>↗</span>
-                </a>
-
-              </div>
-
-            </SpotlightCard></GlareHover></ElectricCard>
-
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
 
             {/* =================================================
                 TEA COFFEE & GREEN TEA
             ================================================= */}
 
-            <ElectricCard color="#FFD6A5"><GlareHover className="project-electric-content"><SpotlightCard className="featured-project">
+            {projectMatchesService(["Digital Marketing", "Social Media Management", "Graphic Design"]) && (
+            <>
+<ElectricCard color="#FFD6A5">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project">
 
-              <div className="project-visual">
+                  <div className="project-visual">
 
-                <div className="project-image-frame glare-hover">
+                    <div className="project-image-frame glare-hover">
 
-                  <img
-                    src={teaCoffeeCover}
-                    alt="Tea Coffee & Green Tea digital marketing project"
-                    className="project-image"
-                  />
+                      <img
+                        src={teaCoffeeCover}
+                        alt="Tea Coffee & Green Tea digital marketing project"
+                        className="project-image"
+                      />
 
-                </div>
+                    </div>
 
-              </div>
+                  </div>
 
+                  <div className="project-content">
 
-              <div className="project-content">
+                    <div className="project-content-top">
 
-                <div className="project-content-top">
+                      <p className="project-category">
+                        DIGITAL MARKETING · SOCIAL MEDIA · BRAND CONTENT
+                      </p>
 
-                  <p className="project-category">
-                    DIGITAL MARKETING · SOCIAL MEDIA · BRAND CONTENT
-                  </p>
+                      <span className="project-year">
+                        2026
+                      </span>
 
-                  <span className="project-year">
-                    2026
-                  </span>
+                    </div>
 
-                </div>
+                    <h3>
+                      Tea Coffee & Green Tea
+                    </h3>
 
-                <h3>
-                  Tea Coffee & Green Tea
-                </h3>
+                    <p className="project-description">
+                      A conceptual digital marketing project exploring how a
+                      tea and coffee brand could refresh its visual identity,
+                      strengthen social media communication, and create a more
+                      engaging content presence.
+                    </p>
 
-                <p className="project-description">
-                  A conceptual digital marketing project exploring how a
-                  tea and coffee brand could refresh its visual identity,
-                  strengthen social media communication, and create a more
-                  engaging content presence.
-                </p>
+                    <div className="project-tags">
+                      <span>Digital Marketing</span>
+                      <span>Social Media</span>
+                      <span>Brand Refresh</span>
+                      <span>Content Design</span>
+                      <span>Visual Strategy</span>
+                    </div>
 
-                <div className="project-tags">
+                    <a
+                      href="/case-study/tea-coffee"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
 
-                  <span>Digital Marketing</span>
-                  <span>Social Media</span>
-                  <span>Brand Refresh</span>
-                  <span>Content Design</span>
-                  <span>Visual Strategy</span>
+                  </div>
 
-                </div>
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
 
-                <a
-                  href="/case-study/tea-coffee"
-                  className="project-link"
-                >
-                  View Full Case Study
-                  <span>↗</span>
-                </a>
+            {/* =================================================
+                LUMÉ — SOCIAL MEDIA MANAGEMENT
+            ================================================= */}
 
-              </div>
+            {projectMatchesService(["Digital Marketing", "Social Media Management"]) && (
+            <>
+<ElectricCard color="#F3C7D2">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project lume-social-project">
 
-            </SpotlightCard></GlareHover></ElectricCard>
+                  <div className="project-visual">
+                    <div
+                      className="project-image-frame glare-hover"
+                      style={{
+                        overflow: "hidden",
+                        minHeight: "420px",
+                        background: "linear-gradient(135deg, #f9e9ec 0%, #f5dfe4 48%, #efe4e8 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        position: "relative",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "78%",
+                          padding: "34px 28px",
+                          borderRadius: "22px",
+                          background: "rgba(255,255,255,0.72)",
+                          border: "1px solid rgba(255,255,255,0.9)",
+                          boxShadow: "0 24px 60px rgba(100,70,80,0.12)",
+                          textAlign: "center",
+                          backdropFilter: "blur(10px)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: "block",
+                            marginBottom: "12px",
+                            fontSize: "10px",
+                            letterSpacing: "0.2em",
+                            fontWeight: "700",
+                            color: "#9d7777",
+                          }}
+                        >
+                          SOCIAL MEDIA MANAGEMENT
+                        </span>
+
+                        <div
+                          style={{
+                            fontFamily: '"Playfair Display", Georgia, serif',
+                            fontSize: "42px",
+                            lineHeight: "1",
+                            color: "#4d3b3b",
+                            marginBottom: "14px",
+                          }}
+                        >
+                          LUMÉ
+                        </div>
+
+                        <p
+                          style={{
+                            margin: 0,
+                            fontSize: "12px",
+                            letterSpacing: "0.08em",
+                            textTransform: "uppercase",
+                            color: "#876d72",
+                          }}
+                        >
+                          Content · Strategy · Social
+                        </p>
+                      </div>
+
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          top: "28px",
+                          right: "34px",
+                          fontSize: "24px",
+                          color: "#b98f9b",
+                        }}
+                      >
+                        ✦
+                      </span>
+
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          bottom: "30px",
+                          left: "34px",
+                          fontSize: "22px",
+                          color: "#b98f9b",
+                        }}
+                      >
+                        ♡
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="project-content">
+                    <div className="project-content-top">
+                      <p className="project-category">
+                        SOCIAL MEDIA MANAGEMENT · CONTENT STRATEGY · BRAND COMMUNICATION
+                      </p>
+
+                      <span className="project-year">
+                        2026
+                      </span>
+                    </div>
+
+                    <h3>
+                      LUMÉ — Social Media Management
+                    </h3>
+
+                    <p className="project-description">
+                      A complete social media management case study for LUMÉ,
+                      focused on content planning, visual direction, educational
+                      storytelling, and building a consistent skincare presence
+                      across social platforms.
+                    </p>
+
+                    <div className="project-tags">
+                      <span>Social Media Management</span>
+                      <span>Content Strategy</span>
+                      <span>Instagram</span>
+                      <span>Creative Direction</span>
+                      <span>Brand Communication</span>
+                    </div>
+
+                    <a
+                      href="/case-study/lume-social-media"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
+                  </div>
+
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
+
+            {/* =================================================
+                TEA, COFFEE & GREEN TEA — SOCIAL MEDIA MANAGEMENT
+            ================================================= */}
+
+            {projectMatchesService(["Digital Marketing", "Social Media Management"]) && (
+            <>
+<ElectricCard color="#A8B89A">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project tea-social-project">
+
+                  <div className="project-visual">
+                    <div
+                      className="project-image-frame glare-hover"
+                      style={{
+                        overflow: "hidden",
+                        minHeight: "420px",
+                        background:
+                          "linear-gradient(135deg, #f5eee4 0%, #e7dccb 52%, #cfd8c5 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        position: "relative",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "78%",
+                          padding: "36px 28px",
+                          borderRadius: "22px",
+                          background: "rgba(255,255,255,0.72)",
+                          border: "1px solid rgba(255,255,255,0.9)",
+                          boxShadow: "0 24px 60px rgba(62,43,33,0.14)",
+                          textAlign: "center",
+                          backdropFilter: "blur(10px)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: "block",
+                            marginBottom: "12px",
+                            fontSize: "10px",
+                            letterSpacing: "0.2em",
+                            fontWeight: "700",
+                            color: "#7a8f6a",
+                          }}
+                        >
+                          SOCIAL MEDIA MANAGEMENT
+                        </span>
+
+                        <div
+                          style={{
+                            fontFamily: '"Playfair Display", Georgia, serif',
+                            fontSize: "36px",
+                            lineHeight: "1.05",
+                            color: "#3e2b21",
+                            marginBottom: "14px",
+                          }}
+                        >
+                          Tea, Coffee
+                          <em
+                            style={{
+                              display: "block",
+                              fontWeight: "400",
+                              color: "#6b4e3d",
+                            }}
+                          >
+                            & Green Tea.
+                          </em>
+                        </div>
+
+                        <p
+                          style={{
+                            margin: 0,
+                            fontSize: "11px",
+                            letterSpacing: "0.08em",
+                            textTransform: "uppercase",
+                            color: "#75675e",
+                          }}
+                        >
+                          Content · Strategy · Storytelling
+                        </p>
+                      </div>
+
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          top: "28px",
+                          right: "34px",
+                          fontSize: "24px",
+                          color: "#7a8f6a",
+                        }}
+                      >
+                        ✦
+                      </span>
+
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          bottom: "30px",
+                          left: "34px",
+                          fontSize: "22px",
+                          color: "#a47b57",
+                        }}
+                      >
+                        ☕
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="project-content">
+                    <div className="project-content-top">
+                      <p className="project-category">
+                        SOCIAL MEDIA MANAGEMENT · CONTENT STRATEGY · BRAND STORYTELLING
+                      </p>
+
+                      <span className="project-year">
+                        2026
+                      </span>
+                    </div>
+
+                    <h3>
+                      Tea, Coffee & Green Tea — Social Media Management
+                    </h3>
+
+                    <p className="project-description">
+                      A complete social media management concept built around
+                      turning everyday tea and coffee moments into meaningful
+                      lifestyle rituals through education, product storytelling,
+                      brewing content, and community engagement.
+                    </p>
+
+                    <div className="project-tags">
+                      <span>Social Media Management</span>
+                      <span>Content Strategy</span>
+                      <span>Instagram</span>
+                      <span>Creative Direction</span>
+                      <span>Brand Storytelling</span>
+                    </div>
+
+                    <a
+                      href="/case-study/tea-coffee-social-media"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
+                  </div>
+
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
+
+            {/* =================================================
+                GRAPHIC DESIGN
+            ================================================= */}
+
+            {projectMatchesService(["Graphic Design"]) && (
+            <>
+<ElectricCard color="#A8B8A0">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project graphic-design-project">
+
+                  <div className="project-visual">
+                    <div className="project-image-frame glare-hover">
+                      <img
+                        src={graphicDesignCover}
+                        alt="Selected graphic design work by Mahek Zehra"
+                        className="project-image"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="project-content">
+                    <div className="project-content-top">
+                      <p className="project-category">
+                        GRAPHIC DESIGN · BRANDING · SOCIAL MEDIA · VISUAL COMMUNICATION
+                      </p>
+                      <span className="project-year">2026</span>
+                    </div>
+
+                    <h3>
+                      Graphic Design Collection
+                    </h3>
+
+                    <p className="project-description">
+                      A curated collection of graphic design work featuring
+                      brand explorations, promotional creatives, social visuals,
+                      identity studies, and presentation-ready artwork.
+                    </p>
+
+                    <div className="project-tags">
+                      <span>Graphic Design</span>
+                      <span>Branding</span>
+                      <span>Visual Identity</span>
+                      <span>Social Media</span>
+                      <span>Creative Direction</span>
+                    </div>
+
+                    <a
+                      href="/case-study/graphic-design"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
+                  </div>
+
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
+
+            {/* =================================================
+                HAIDER ESTATE & BUILDERS — LAST PROJECT
+            ================================================= */}
+
+            {projectMatchesService(["Web Design & Development"]) && (
+            <>
+<ElectricCard color="#D8C3A5">
+              <GlareHover className="project-electric-content">
+                <SpotlightCard className="featured-project">
+
+                  <div className="project-visual">
+                    <div className="project-image-frame glare-hover">
+                      <img
+                        src={haiderHome}
+                        alt="Haider Estate & Builders website"
+                        className="project-image"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="project-content">
+                    <div className="project-content-top">
+                      <p className="project-category">
+                        WEB DESIGN · DEVELOPMENT · CORPORATE WEBSITE
+                      </p>
+
+                      <span className="project-year">
+                        2026
+                      </span>
+                    </div>
+
+                    <h3>
+                      Haider Estate & Builders
+                    </h3>
+
+                    <p className="project-description">
+                      A responsive corporate website designed to give Haider
+                      Estate & Builders a stronger digital presence and
+                      showcase its construction, renovation, structural,
+                      interior, and commercial capabilities.
+                    </p>
+
+                    <div className="project-tags">
+                      <span>Web Design</span>
+                      <span>React</span>
+                      <span>Responsive UI</span>
+                      <span>Corporate Website</span>
+                      <span>Interactive Sections</span>
+                    </div>
+
+                    <a
+                      href="/case-study/haider-estates"
+                      className="project-link"
+                    >
+                      View Full Case Study
+                      <span>↗</span>
+                    </a>
+                  </div>
+
+                </SpotlightCard>
+              </GlareHover>
+            </ElectricCard>
+            </>
+          )}
+
+          {activeService === "Video Editing" && (
+            <div className="work-empty-state">
+              <span>✦</span>
+              <strong>More video work is coming soon.</strong>
+              <p>Selected video-editing projects will appear here as the portfolio grows.</p>
+            </div>
+          )}
 
           </div>
 
         </section>
 
-
         {/* =====================================================
-            SKILLS & TOOLS
+            SKILLS
         ===================================================== */}
 
         <section
@@ -1133,7 +1825,6 @@ function PortfolioHome() {
               </p>
 
             </div>
-
 
             <div className="skills-grid">
 
@@ -1191,7 +1882,21 @@ function PortfolioHome() {
 
                   <div>
 
-                    <h3><PastelPill tone={number === "01" || number === "03" ? "lavender" : number === "02" || number === "06" ? "blush" : number === "04" || number === "07" ? "blue" : "mint"}>{title}</PastelPill></h3>
+                    <h3>
+                      <PastelPill
+                        tone={
+                          number === "01" || number === "03"
+                            ? "lavender"
+                            : number === "02" || number === "06"
+                            ? "blush"
+                            : number === "04" || number === "07"
+                            ? "blue"
+                            : "mint"
+                        }
+                      >
+                        {title}
+                      </PastelPill>
+                    </h3>
 
                     <p>
                       {description}
@@ -1209,15 +1914,40 @@ function PortfolioHome() {
 
         </section>
 
+        {/* =====================================================
+            TECH MARQUEE
+        ===================================================== */}
 
-        <section className="tech-marquee-section" aria-label="Technology and creative toolkit">
+        <section
+          className="tech-marquee-section"
+          aria-label="Technology and creative toolkit"
+        >
+
           <div className="tech-marquee-track">
-            {['React', 'JavaScript', 'UI / UX', 'Responsive Web', 'Figma', 'SEO', 'Digital Marketing', 'Creative Design', 'React Native', 'Git'].map((item, i) => (
-              <span key={`${item}-${i}`}><b>✦</b>{item}</span>
-            ))}
-          </div>
-        </section>
 
+            {[
+              "React",
+              "JavaScript",
+              "UI / UX",
+              "Responsive Web",
+              "Figma",
+              "SEO",
+              "Digital Marketing",
+              "Creative Design",
+              "React Native",
+              "Git",
+            ].map((item, i) => (
+
+              <span key={`${item}-${i}`}>
+                <b>✦</b>
+                {item}
+              </span>
+
+            ))}
+
+          </div>
+
+        </section>
 
         {/* =====================================================
             CONTACT
@@ -1247,12 +1977,42 @@ function PortfolioHome() {
               into something impactful.
             </p>
 
-            <div className="contact-mini-ui" aria-label="Project starter">
-              <label><span>Your name</span><input aria-label="Your name" placeholder="Tell me your name" /></label>
-              <label><span>What are we creating?</span><input aria-label="Project type" placeholder="Website, app, brand or campaign" /></label>
+            <div
+              className="contact-mini-ui"
+              aria-label="Project starter"
+            >
+
+              <label>
+                <span>Your name</span>
+                <input
+                  aria-label="Your name"
+                  placeholder="Tell me your name"
+                />
+              </label>
+
+              <label>
+                <span>What are we creating?</span>
+                <input
+                  aria-label="Project type"
+                  placeholder="Website, app, brand or campaign"
+                />
+              </label>
+
             </div>
 
-            <Magnetic><ClickSpark><button type="button" className="contact-button" onClick={openChat}>Let's Work Together <span>↗</span></button></ClickSpark></Magnetic>
+            <Magnetic>
+              <ClickSpark>
+
+                <button
+                  type="button"
+                  className="contact-button"
+                  onClick={openChat}
+                >
+                  Let's Work Together <span>↗</span>
+                </button>
+
+              </ClickSpark>
+            </Magnetic>
 
           </div>
 
@@ -1260,15 +2020,32 @@ function PortfolioHome() {
 
       </main>
 
-
       {/* =====================================================
           FOOTER
       ===================================================== */}
 
       <footer className="footer whimsical-footer">
-        <div className="footer-doodle footer-doodle-one" aria-hidden="true">✦</div>
-        <div className="footer-doodle footer-doodle-two" aria-hidden="true">♡</div>
-        <div className="footer-doodle footer-doodle-three" aria-hidden="true">⌁</div>
+
+        <div
+          className="footer-doodle footer-doodle-one"
+          aria-hidden="true"
+        >
+          ✦
+        </div>
+
+        <div
+          className="footer-doodle footer-doodle-two"
+          aria-hidden="true"
+        >
+          ♡
+        </div>
+
+        <div
+          className="footer-doodle footer-doodle-three"
+          aria-hidden="true"
+        >
+          ⌁
+        </div>
 
         <div className="footer-container whimsical-footer-container">
 
@@ -1289,11 +2066,11 @@ function PortfolioHome() {
               </p>
 
               <span className="footer-availability whimsical-availability">
-                <i>●</i> Available for creative projects
+                <i>●</i>
+                Available for creative projects
               </span>
 
             </div>
-
 
             <div>
 
@@ -1303,30 +2080,15 @@ function PortfolioHome() {
 
               <div className="footer-links">
 
-                <a href="#about">
-                  About
-                </a>
-
-                <a href="#services">
-                  Services
-                </a>
-
-                <a href="#work">
-                  Projects
-                </a>
-
-                <a href="#skills">
-                  Skills
-                </a>
-
-                <a href="#contact">
-                  Contact
-                </a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#work">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
 
               </div>
 
             </div>
-
 
             <div>
 
@@ -1366,7 +2128,6 @@ function PortfolioHome() {
 
           </div>
 
-
           <div className="footer-bottom footer-bottom-whimsy">
 
             <p className="footer-copyright">
@@ -1383,9 +2144,8 @@ function PortfolioHome() {
 
       </footer>
 
-
       {/* =====================================================
-          FLOATING WHATSAPP BUTTON
+          FLOATING WHATSAPP
       ===================================================== */}
 
       <a
@@ -1426,7 +2186,6 @@ function PortfolioHome() {
             "0 10px 28px rgba(37, 211, 102, 0.30)";
         }}
       >
-
         <span
           aria-hidden="true"
           style={{
@@ -1438,9 +2197,7 @@ function PortfolioHome() {
         >
           ☎
         </span>
-
       </a>
-
 
       {/* =====================================================
           HOME PAGE CHATBOT
@@ -1456,7 +2213,6 @@ function PortfolioHome() {
   );
 }
 
-
 /* =========================================================
    APP
 ========================================================= */
@@ -1464,11 +2220,6 @@ function PortfolioHome() {
 function App() {
 
   const [globalChatOpen, setGlobalChatOpen] = useState(false);
-
-
-  /* =========================================================
-     GLOBAL CHATBOT EVENT
-  ========================================================= */
 
   useEffect(() => {
 
@@ -1482,21 +2233,17 @@ function App() {
     );
 
     return () => {
-
       window.removeEventListener(
         "open-contact-chatbot",
         handleOpenChat
       );
-
     };
 
   }, []);
 
-
   const closeGlobalChat = () => {
     setGlobalChatOpen(false);
   };
-
 
   return (
 
@@ -1504,71 +2251,72 @@ function App() {
 
       <Routes>
 
-        {/* ===================================================
-            PORTFOLIO HOME
-        =================================================== */}
-
+        {/* PORTFOLIO HOME */}
         <Route
           path="/"
           element={<PortfolioHome />}
         />
 
-
-        {/* ===================================================
-            FN JEWELRY CASE STUDY
-        =================================================== */}
-
+        {/* FN JEWELRY */}
         <Route
           path="/case-study/fn-jewelry"
           element={<FNJewelryCaseStudy />}
         />
 
-
-        {/* ===================================================
-            HOME LOANS CASE STUDY
-        =================================================== */}
-
+        {/* HOME LOANS */}
         <Route
           path="/case-study/home-loans"
           element={<HomeLoansCaseStudy />}
         />
 
-
-        {/* ===================================================
-            LUMÉ MOBILE APP CASE STUDY
-        =================================================== */}
-
+        {/* LUMÉ MOBILE */}
         <Route
           path="/case-study/lume-mobile-app"
           element={<LumeMobileCaseStudy />}
         />
 
-
-        {/* ===================================================
-            LUME SKINCARE CASE STUDY
-        =================================================== */}
-
+        {/* LUMÉ SKINCARE */}
         <Route
           path="/case-study/lume-skincare"
           element={<LumeSkincareCaseStudy />}
         />
 
+        {/* LUMÉ SOCIAL MEDIA MANAGEMENT */}
+        <Route
+          path="/case-study/lume-social-media"
+          element={<LumeSocialMediaCaseStudy />}
+        />
 
-        {/* ===================================================
-            TEA COFFEE & GREEN TEA CASE STUDY
-        =================================================== */}
-
+        {/* TEA COFFEE */}
         <Route
           path="/case-study/tea-coffee"
           element={<TeaCoffeeCaseStudy />}
         />
 
+        {/* TEA, COFFEE & GREEN TEA — SOCIAL MEDIA MANAGEMENT */}
+        <Route
+          path="/case-study/tea-coffee-social-media"
+          element={<TeaCoffeeSocialMediaCaseStudy />}
+        />
+
+        {/* =================================================
+            HAIDER ESTATE & BUILDERS
+        ================================================= */}
+
+        <Route
+          path="/case-study/haider-estates"
+          element={<HaiderEstatesCaseStudy />}
+        />
+
+        {/* GRAPHIC DESIGN */}
+        <Route
+          path="/case-study/graphic-design"
+          element={<GraphicDesignCaseStudy />}
+        />
+
       </Routes>
 
-
-      {/* =====================================================
-          GLOBAL CONTACT CHATBOT
-      ===================================================== */}
+      {/* GLOBAL CHATBOT */}
 
       {globalChatOpen && (
         <ContactChatbot
@@ -1580,6 +2328,5 @@ function App() {
 
   );
 }
-
 
 export default App;

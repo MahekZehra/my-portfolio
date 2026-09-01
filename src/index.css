@@ -2314,3 +2314,169 @@ section {
   .nav-sparkle{display:none}.nav-spark{display:none}.whimsical-hero::after{opacity:.1}.hero-whimsy-doodle{display:none}.hero-floating-note{right:8%;bottom:6%;font-size:8px}.whimsical-hero-title::after{width:78px}.whimsical-footer-container{padding-top:68px}.footer-whimsy-line{top:15px}.footer-whimsy-line i{width:22px}.whimsical-footer-main>div:not(.footer-brand){padding:8px 0;background:transparent;box-shadow:none;transform:none!important}.about-eyebrow .eyebrow-mini-note{display:none}
 }
 @media(prefers-reduced-motion:reduce){.nav-sparkle,.whimsical-logo::before,.hero-whimsy-doodle,.hero-floating-note,.hero-visual::after,.eyebrow-spark,.whimsical-number span,.whimsical-availability i,.footer-made-with span{animation:none!important}}
+
+/* =========================================================
+   SERVICE → PROJECT FILTER
+========================================================= */
+
+.service-card-clickable {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 27px;
+}
+
+.service-card-clickable > .service-card {
+  height: 100%;
+}
+
+.service-card-clickable:focus-visible {
+  outline: 2px solid var(--lavender-dark);
+  outline-offset: 4px;
+}
+
+.service-card-clickable.is-active > .service-card {
+  box-shadow:
+    0 0 0 2px rgba(155, 130, 173, 0.28),
+    0 22px 55px rgba(70, 55, 75, 0.13);
+}
+
+.service-card-clickable.is-active .service-arrow {
+  transform: rotate(45deg);
+  background: #fff;
+}
+
+/* =========================================================
+   WORK FILTER BAR
+========================================================= */
+
+.work-filter-bar {
+  margin: -18px 0 48px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-sm);
+}
+
+.work-filter-copy {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 13px;
+}
+
+.work-filter-copy span {
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.work-filter-copy strong {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.work-filter-copy small {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: var(--lavender-dark);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.work-filter-reset {
+  min-height: 40px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.work-filter-reset:hover,
+.work-filter-reset.is-active {
+  transform: translateY(-2px);
+  background: var(--text);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(70, 55, 75, 0.12);
+}
+
+.work-filter-reset span {
+  font-size: 14px;
+}
+
+.work-empty-state {
+  width: 100%;
+  margin-top: 20px;
+  padding: 55px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed rgba(155, 130, 173, 0.28);
+  border-radius: 28px;
+  background: rgba(247, 242, 248, 0.58);
+}
+
+.work-empty-state > span {
+  color: var(--lavender-dark);
+  font-size: 22px;
+}
+
+.work-empty-state strong {
+  margin-top: 13px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.work-empty-state p {
+  max-width: 480px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .work-filter-bar {
+    margin: -10px 0 35px;
+    padding: 14px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .work-filter-copy {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .work-filter-reset {
+    width: 100%;
+  }
+
+  .service-card-clickable {
+    border-radius: 24px;
+  }
+}
